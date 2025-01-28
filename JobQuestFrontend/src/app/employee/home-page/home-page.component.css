@@ -1,0 +1,900 @@
+body {
+  background-color: #f9f8f8;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  text-decoration-line: none;
+  list-style-type: none;
+}
+
+* {
+  font-family: Inter, sans-serif;
+  text-decoration: none;
+  text-decoration-line: none;
+  list-style-type: none;
+}
+
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 1% 2%;
+}
+
+.login_reigster_container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar_ul_list_heading {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+.logo_anchor_container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar_li_list {
+  cursor: default;
+  list-style-type: none;
+  margin: 0 8%;
+}
+
+li,
+ul,
+a {
+  text-decoration: none;
+  text-decoration-line: none;
+  list-style-type: none;
+  font-family: "Inter";
+}
+
+a:visited {
+  outline: none;
+  text-decoration: none;
+}
+
+.header_anchor_tags {
+  font-weight: 500;
+  line-height: 20px;
+  font-size: 16px;
+  color: #121224;
+  font-family: "Inter";
+}
+
+.login_button {
+  width: 100px;
+  height: 40px;
+  border: 1px solid #275df5;
+  color: #275df5;
+  font-weight: bold;
+  border-radius: 40px;
+}
+
+.profile-dropdown-container:hover {
+  background-color: #dde9f8;
+  border-radius: 5px;
+}
+
+.profile-dropdown-container {
+  position: relative;
+}
+
+.profile-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+hr {
+  padding: 0;
+  margin: 0;
+}
+
+.register_button {
+  width: 100px;
+  height: 40px;
+  background-color: #f05537;
+  border: none;
+  color: #fff;
+  border-radius: 40px;
+}
+
+.dropdown_item_data {
+  padding: 5px 10px;
+  font-weight: 600;
+}
+
+.heading_tagline_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Inter";
+  font-size: 40px;
+  margin: 0;
+}
+
+.tag_line_company {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  padding-top: 8px;
+}
+
+.spaced_container {
+  height: 120px;
+}
+
+.search_bar_container {
+  margin-top: 20px;
+  max-width: 60%;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  padding: 16px 20px;
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 0 25px 60px rgba(113, 106, 147, 0.2);
+  border-radius: 40px;
+}
+
+.search_icon_container {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.suggestor_input {
+  border: 0px solid;
+  font-weight: 500;
+  font-size: 18px;
+  flex-grow: 1;
+  padding: 8px 0;
+  outline: none;
+}
+
+.suggestor_input:focus-visible {
+  border: 0px solid;
+}
+
+input {
+  box-sizing: border-box;
+}
+
+.search_button {
+  background-color: #275df5;
+  width: 100px;
+  height: 40px;
+  border: none;
+  color: #fff;
+  border-radius: 40px;
+}
+
+.tags_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px 5px;
+  padding: 2%;
+}
+
+.tags {
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px solid #e7e7f1;
+  background-color: #fff;
+  margin: 0 12px 12px 0;
+}
+
+.tag_label_data {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #121224;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 95px;
+  margin: 0 5px 0 5px;
+  font-family: "Inter";
+}
+
+.profile_logo {
+  width: 30px;
+  height: 30px;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+.profile_logo_img {
+  width: 30px;
+  height: 30px;
+}
+
+.tag_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.tags_img {
+  height: 25px;
+  width: 25px;
+}
+
+.top_companies_text_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.top_companies_text {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 31px;
+  text-align: center;
+  color: #121224;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.top_companies_card_container {
+  display: flex;
+  margin: 0.7% 2%;
+  overflow-x: auto;
+}
+
+.top_companies_card_container:focus {
+  outline: none;
+}
+
+.company_card_container {
+  padding: 1% 2%;
+  border-radius: 9px;
+  margin: 2px 15px;
+  border: 1px solid #e7e7f1;
+  background-color: #fff;
+  box-shadow: 0px 6px 12px rgba(30, 10, 58, 0.04);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.company_heading_container {
+  display: flex;
+  align-items: center;
+}
+
+.company_text {
+  color: #121224;
+  max-width: 175px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  max-height: 54px;
+}
+
+.company_active_hiring_text {
+  color: #717b9e;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+
+.company_image_list_container {
+  display: flex;
+}
+
+.image_company_div {
+  width: 40px;
+  height: 40px;
+  margin: 5px 5px;
+  border-radius: 4px;
+  border: 1px solid rgb(204, 202, 202);
+}
+
+.company_image {
+  width: 40px;
+  height: 40px;
+  background-size: cover;
+}
+
+.actively_hiring_companies_container {
+  margin: 0 2%;
+  display: flex;
+  overflow-x: auto;
+}
+
+.actively_hiring_companies_container:focus {
+  outline: none;
+}
+
+.rating_star_image {
+  width: 15px;
+  height: 15px;
+}
+
+.rating_review_container {
+  display: flex;
+  justify-content: center;
+}
+
+.vertical_container {
+  height: 15px;
+  width: 2px;
+  margin: 0 10px;
+  background-color: rgb(148, 147, 147);
+}
+
+.company_image_div_container {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company_image_div {
+  height: 60px;
+  align-items: center;
+}
+
+.company_text_active_wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.company_text_active {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.rating_text {
+  font-size: 13px;
+  color: rgb(138, 137, 137);
+  margin: 0 5px;
+}
+
+.review_rating {
+  font-size: 13px;
+  color: rgb(138, 137, 137);
+}
+
+.company_heading_review_container {
+  margin: 10px 0;
+  padding: 20px 10px;
+  border-radius: 8px;
+  background-color: rgb(250, 250, 211);
+}
+
+.company_tagline_description_wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.company_tagline_description {
+  color: rgb(48, 46, 46);
+  margin: 5px 0;
+  width: 90%;
+
+  text-align: center;
+  font-family: Inter Georgia, "Times New Roman", Times, serif;
+}
+
+.view_jobs_button_wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.view_jobs_button {
+  color: #154be0;
+  border: none;
+  margin-top: 5px;
+  padding: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  background-color: rgb(37, 51, 245, 0.2);
+}
+
+.actively_hiring_companies_container::-webkit-scrollbar,
+.top_companies_card_container::-webkit-scrollbar,
+.total_event_container::-webkit-scrollbar {
+  display: none;
+}
+
+.actively_hiring_companies_container,
+.top_companies_card_container,
+.total_event_container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.upcoming_events_container_wrapper {
+  display: flex;
+  margin: 5px 2%;
+  overflow: hidden;
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.upcoming_event_container {
+  border-radius: 15px;
+  background-color: #fff;
+  height: 320px;
+  width: 300px;
+  border: 1px solid #e7e7f1;
+}
+
+.padding_container {
+  padding: 8px;
+}
+
+.event_image_div {
+  height: 90px;
+}
+
+.event_image {
+  height: 100px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.event_flex_container {
+  display: flex;
+  margin: 0 0 0 2%;
+}
+
+.upcoming_event_icon_text_wrapper {
+  width: 400px;
+}
+
+.event_img_container {
+  width: 150px;
+}
+
+.event_img {
+  width: 250px;
+  height: 250px;
+}
+
+.event_text_name {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 10px 5px 0 5px;
+}
+
+.event_company_name {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(138, 137, 137);
+  margin: 5px 5px;
+}
+
+.event_tag_info {
+  border-radius: 11px;
+  display: inline-block;
+  border: 1px solid rgb(204, 202, 202);
+  padding: 4px 8px;
+  color: rgb(95, 95, 95);
+  font-weight: 600;
+  font-size: 11px;
+  margin: 5px 0;
+}
+
+.tags_img_events {
+  height: 15px;
+  width: 15px;
+  margin: 5px 8px;
+}
+
+.total_event_container {
+  display: flex;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.total_event_container:focus {
+  outline: none;
+}
+
+.date_time_enroll_container {
+  display: flex;
+  align-items: center;
+}
+
+.event_date_time {
+  font-size: 13px;
+  color: rgb(138, 137, 137);
+  margin-right: 10px;
+}
+
+.horizontal_line {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(226, 224, 224);
+  margin: 10px 0;
+}
+
+.rewards_view_details_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.exciting_rewards {
+  color: #8951ff;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.trophy_reward_container {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(219, 218, 218);
+  border-radius: 20px;
+  padding: 4px 8px;
+}
+
+.small {
+  height: 12px;
+  width: 12px;
+  margin: 0;
+  padding: 0 2px;
+}
+
+.view_details_button {
+  color: #275df5;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  background-color: transparent;
+}
+
+.event_rights_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 0 5px;
+}
+
+.event_rights {
+  font-size: 9px;
+  color: rgb(163, 159, 159);
+}
+
+/* homepage.component.css */
+.loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.spinner-border {
+  width: 4rem;
+  height: 4rem;
+}
+
+.discover_job_image {
+  width: 300px;
+  height: 200px;
+  margin: 5px 0 0 0;
+}
+
+.dicover_job_text {
+  font-weight: bold;
+  font-size: 24px;
+  width: 25%;
+  margin: 0 0 4px 0;
+  padding: 0;
+}
+
+.discover_job_tag_text {
+  font-size: 14px;
+  line-height: 18px;
+  color: #474d6a;
+}
+
+.grid_job_tag {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.job_tag_data {
+  margin: 4% 10px;
+  border: 1px solid #e7e7f1;
+  border-radius: 10px;
+  padding: 4% 3%;
+  width: 190px;
+}
+
+.job_tag_name {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-overflow: ellipsis;
+  margin-bottom: 6px;
+  color: #121224;
+}
+
+.jobs_arrow_flex_container {
+  display: flex;
+}
+
+.jobs_available_text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #474d6a;
+}
+
+.nI-gNb-company-logo {
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin: 2% 0 0 0;
+  background-color: #fff;
+  padding: 2% 3% 0 3%;
+}
+
+.connect_heading {
+  font-weight: 700;
+  font-size: 14px;
+  color: #121224;
+  margin: 15px 0 15px 0;
+}
+
+.social_anchor_tag_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer_li {
+  line-height: 18px;
+  padding-top: 12px;
+}
+
+.footer_li_a {
+  color: #121224;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-decoration: none;
+  -webkit-transition: color 0.25s ease;
+  transition: color 0.25s ease;
+}
+
+.nI-gNb-app-store {
+  background: #fff;
+  border: 1px solid #e7e7f1;
+  border-radius: 20px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 102px;
+  margin-left: 93px;
+  padding: 24px;
+  position: relative;
+  z-index: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+}
+
+.nI-gNb-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.nI-gNb-description {
+  color: #474d6a;
+  font-size: 13px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  margin-top: 5px;
+}
+
+.nI-gNb-app-cont {
+  padding-top: 20px;
+}
+
+.active_company_container_data {
+  margin: 10px;
+  flex-shrink: 0;
+  padding: 2%;
+  border: 1px solid rgb(204, 202, 202);
+  border-radius: 10px;
+  width: 250px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.discover_job_back_container {
+  border-radius: 20px;
+  padding: 1% 2% 2% 4%;
+  border: 1px solid #fce4cf;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 240, 226, 0) 0%,
+    #fff0e2 100%
+  );
+  margin: 1% 2%;
+  width: 100%;
+}
+
+.discover_job_container_by_tag_data {
+  position: absolute;
+  right: 80px;
+  border: 1.5px solid #e7e7f1;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 2% 2% 4% 2%;
+}
+
+.discover_jobs_popular_by_tags_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+}
+
+.events_heading {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.upcoming_events_text,
+.dicover_job_text_hidden {
+  display: none;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 31px;
+  margin: 1rem 0;
+}
+
+.website_headline {
+  font-size: 50px;
+  font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+  .events_heading {
+    font-size: 21px;
+  }
+
+  .event_img {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .events_heading {
+    font-size: 18px;
+  }
+
+  .event_img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .upcoming_event_icon_text_wrapper {
+    display: none;
+  }
+
+  .event_flex_container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .upcoming_events_text {
+    display: block;
+  }
+}
+
+@media (max-width: 950px) {
+  .dicover_job_text_hidden {
+    display: block;
+  }
+
+  .discover_job_back_container {
+    display: none;
+  }
+
+  .discover_jobs_popular_by_tags_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .discover_job_container_by_tag_data {
+    width: 60%;
+    border: 1.5px solid #e7e7f1;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 2% 2% 4% 2%;
+    position: relative;
+    right: auto;
+  }
+
+  .website_headline {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 780px) {
+  .discover_job_container_by_tag_data {
+    display: flex;
+    justify-content: center;
+  }
+
+  .grid_job_tag {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .search_button {
+    height: 30px;
+    font-size: 13px;
+  }
+
+  .search_bar_container {
+    padding: 5px 20px;
+  }
+
+  .suggestor_input::placeholder {
+    font-size: 13px;
+  }
+
+  .top_companies_text,
+  .dicover_job_text_hidden,
+  .upcoming_events_text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .website_headline {
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .tag_line_company {
+    font-size: 15px;
+  }
+}

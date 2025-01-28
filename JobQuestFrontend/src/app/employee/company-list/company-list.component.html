@@ -1,0 +1,53 @@
+<div class="containerr">
+  <div class="left_right_side_container">
+    <div class="left_side_section"></div>
+    <div class="right_side_section">
+      <div class="company_grid_view_container">
+        <a
+          href="/companyDetails?companyId={{ comp.compId }}"
+          *ngFor="let comp of companyList"
+        >
+          <div class="company_data_container">
+            <div class="img_name_desc_container">
+              <div class="img_name_cont">
+                <div class="img_container">
+                  <img
+                    src="assets/{{ comp.compPosterImg }}"
+                    alt=""
+                    class="company_logo_img"
+                  />
+                </div>
+
+                <div class="name_rating_container" style="width: 100%">
+                  <div class="company_label">{{ comp.compName }}</div>
+                  <div
+                    class="company_rating_review_container"
+                    style="margin: 0.5rem"
+                  >
+                    <img src="../../assets/star.png" alt="" class="star_img" />
+                    <span class="rating_label">{{ comp.compRating }}</span>
+                    <div class="vertical_divider"></div>
+                    <span class="rating_label reviews_data"
+                      >{{ comp.noOfFollower }} Reviews</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="next_arrow_img">
+                  <img src="../../assets/back.png" alt="" class="back_img" />
+                </div>
+              </div>
+            </div>
+            <div class="tags_container_flex">
+              <div class="tags_container">{{ comp.tag1 }}</div>
+              <div class="tags_container">{{ comp.tag2 }}</div>
+              <div class="tags_container">{{ comp.tag3 }}</div>
+              <div class="tags_container">{{ comp.tag4 }}</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

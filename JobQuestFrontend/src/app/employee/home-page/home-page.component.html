@@ -1,0 +1,637 @@
+<div *ngIf="loading" class="loading-indicator">
+  <div class="spinner-border text-primary" role="status">
+    <span class="sr-only"></span>
+  </div>
+</div>
+<div *ngIf="!loading" class="containerr">
+  <div class="spaced_container" style="height: 110px"></div>
+  <div class="heading_tagline_container">
+    <div class="website_headline">Find Your Dream Job Now</div>
+    <div class="tag_line_company">5 lakh+ jobs for you to explore</div>
+  </div>
+  <div class="spaced_container"></div>
+  <div class="search_bar_container">
+    <img src="assets/search_icon.png" alt="" class="search_icon_container" />
+    <input
+      #queryInput
+      class="suggestor_input"
+      name="query"
+      type="text"
+      style="width: 100%"
+      placeholder="Enter skills / designations / companies"
+    />
+    <button (click)="onSearchedClicked(queryInput.value)" class="search_button">
+      Search
+    </button>
+  </div>
+  <div class="spaced_container"></div>
+  <div class="tags_container_wrapper">
+    <div class="tags_container">
+      <div class="tags">
+        <a
+          [routerLink]="['employee/listOfJobs']"
+          [queryParams]="{ tagName: 'Remote' }"
+        >
+          <div class="tag_container">
+            <div class="img_container">
+              <img src="assets/home.png" alt="" class="tags_img" />
+            </div>
+            <label for="" class="tag_label_data">Remote</label>
+            <div class="img_container">
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="tags">
+        <a
+          [routerLink]="['employee/listOfJobs']"
+          [queryParams]="{ tagName: 'Analytics' }"
+        >
+          <div class="tag_container">
+            <div class="img_container">
+              <img src="assets/briefcase.png" alt="" class="tags_img" />
+            </div>
+            <label for="" class="tag_label_data">Analytics</label>
+            <div class="img_container">
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="tags">
+        <a
+          [routerLink]="['employee/listOfJobs']"
+          [queryParams]="{ tagName: 'Engineering' }"
+        >
+          <div class="tag_container">
+            <div class="img_container">
+              <img src="assets/rocket.png" alt="" class="tags_img" />
+            </div>
+            <label for="" class="tag_label_data">Engineering</label>
+            <div class="img_container">
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="tags">
+        <a
+          [routerLink]="['employee/listOfJobs']"
+          [queryParams]="{ tagName: 'MNC' }"
+        >
+          <div class="tag_container">
+            <div class="img_container">
+              <img src="assets/building.png" alt="" class="tags_img" />
+            </div>
+            <label for="" class="tag_label_data">MNC</label>
+            <div class="img_container">
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="tags">
+        <a
+          [routerLink]="['employee/listOfJobs']"
+          [queryParams]="{ tagName: 'Software & Development' }"
+        >
+          <div class="tag_container">
+            <div class="img_container">
+              <img src="assets/cogwheel.png" alt="" class="tags_img" />
+            </div>
+            <label for="" class="tag_label_data">Software & Development</label>
+            <div class="img_container">
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="tags">
+        <a
+          [routerLink]="['employee/listOfJobs']"
+          [queryParams]="{ tagName: 'Fortune 500' }"
+        >
+          <div class="tag_container">
+            <div class="img_container">
+              <img src="assets/approved.png" alt="" class="tags_img" />
+            </div>
+            <label for="" class="tag_label_data">Fortune 500</label>
+            <div class="img_container">
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="tags">
+        <a
+          [routerLink]="['employee/listOfJobs']"
+          [queryParams]="{ tagName: 'HR' }"
+        >
+          <div class="tag_container">
+            <div class="img_container">
+              <img src="assets/group.png" alt="" class="tags_img" />
+            </div>
+            <label for="" class="tag_label_data">HR</label>
+            <div class="img_container">
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="tags">
+        <a
+          [routerLink]="['employee/listOfJobs']"
+          [queryParams]="{ tagName: 'Project Management' }"
+        >
+          <div class="tag_container">
+            <div class="img_container">
+              <img src="assets/statistics.png" alt="" class="tags_img" />
+            </div>
+            <label for="" class="tag_label_data">Project Management</label>
+            <div class="img_container">
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="tags">
+        <a
+          [routerLink]="['employee/listOfJobs']"
+          [queryParams]="{ tagName: 'Sales' }"
+        >
+          <div class="tag_container">
+            <div class="img_container">
+              <img src="assets/sales.png" alt="" class="tags_img" />
+            </div>
+            <label for="" class="tag_label_data">Sales</label>
+            <div class="img_container">
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="spaced_container"></div>
+  <div class="top_companies_text_wrapper">
+    <h2 class="top_companies_text">Top Companies Hiring now</h2>
+  </div>
+
+  <div class="top_companies_card_container">
+    <div class="company_card_container">
+      <a
+        [routerLink]="['companyList']"
+        [queryParams]="{ companyTag: 'Indian MNC' }"
+      >
+        <div class="company_heading_container">
+          <div class="company_text" id="tag">Indian MNC</div>
+          <img src="assets/back.png" alt="" class="tags_img" />
+        </div>
+      </a>
+      <div class="company_active_hiring_text">6.4K+ are actively hiring</div>
+      <div class="company_image_list_container">
+        <div class="image_company_div">
+          <img
+            src="assets/Edtech/greatlearing.png"
+            alt=""
+            class="company_image"
+          />
+        </div>
+        <div class="image_company_div">
+          <img src="assets/Edtech/upgrad.png" alt="" class="company_image" />
+        </div>
+        <div class="image_company_div">
+          <img src="assets/Edtech/vedatu.png" alt="" class="company_image" />
+        </div>
+        <div class="image_company_div">
+          <img
+            src="assets/Edtech/practically.jpg"
+            alt=""
+            class="company_image"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="company_card_container">
+      <a [routerLink]="['companyList']" [queryParams]="{ companyTag: 'B2B' }">
+        <div class="company_heading_container">
+          <div class="company_text" id="tag">B2B</div>
+          <img src="assets/back.png" alt="" class="tags_img" />
+        </div>
+      </a>
+      <div class="company_active_hiring_text">2.5K+ are actively hiring</div>
+      <div class="company_image_list_container">
+        <div class="image_company_div">
+          <img
+            src="assets/Healthcare/zydus.jpeg"
+            alt=""
+            class="company_image"
+          />
+        </div>
+        <div class="image_company_div">
+          <img
+            src="assets/Healthcare/cipla.jpeg"
+            alt=""
+            class="company_image"
+          />
+        </div>
+        <div class="image_company_div">
+          <img
+            src="assets/Healthcare/healthkart.jpeg"
+            alt=""
+            class="company_image"
+          />
+        </div>
+        <div class="image_company_div">
+          <img
+            src="assets/Healthcare/mankind.jpeg"
+            alt=""
+            class="company_image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="company_card_container">
+      <a
+        [routerLink]="['companyList']"
+        [queryParams]="{ companyTag: 'Internet' }"
+      >
+        <div class="company_heading_container">
+          <div class="company_text" id="Internet" id="tag">Internet</div>
+          <img src="assets/back.png" alt="" class="tags_img" />
+        </div>
+      </a>
+      <div class="company_active_hiring_text">3.4K+ are actively hiring</div>
+      <div class="company_image_list_container">
+        <div class="image_company_div">
+          <img
+            src="assets/Healthcare/sunpharma.jpeg"
+            alt=""
+            class="company_image"
+          />
+        </div>
+        <div class="image_company_div">
+          <img src="assets/Finance/boi.jpg" alt="" class="company_image" />
+        </div>
+        <div class="image_company_div">
+          <img
+            src="assets/Healthcare/drreddys.jpg"
+            alt=""
+            class="company_image"
+          />
+        </div>
+        <div class="image_company_div">
+          <img src="assets/Finance/fedral.jfif" alt="" class="company_image" />
+        </div>
+      </div>
+    </div>
+    <div class="company_card_container">
+      <a [routerLink]="['companyList']" [queryParams]="{ companyTag: 'B2C' }">
+        <div class="company_heading_container">
+          <div class="company_text" id="tag">B2C</div>
+          <img src="assets/back.png" alt="" class="tags_img" />
+        </div>
+      </a>
+      <div class="company_active_hiring_text">5.7K+ are actively hiring</div>
+      <div class="company_image_list_container">
+        <div class="image_company_div">
+          <img src="assets/Fintech/cred.png" alt="" class="company_image" />
+        </div>
+        <div class="image_company_div">
+          <img src="assets/Fintech/simpl.png" alt="" class="company_image" />
+        </div>
+        <div class="image_company_div">
+          <img src="assets/Fintech/zerodha.png" alt="" class="company_image" />
+        </div>
+        <div class="image_company_div">
+          <img src="assets/Fintech/groww.jpg" alt="" class="company_image" />
+        </div>
+      </div>
+    </div>
+
+    <div class="company_card_container">
+      <a
+        [routerLink]="['companyList']"
+        [queryParams]="{ companyTag: 'Private' }"
+      >
+        <div class="company_heading_container">
+          <div class="company_text" id="tag">Private</div>
+          <img src="assets/back.png" alt="" class="tags_img" />
+        </div>
+      </a>
+      <div class="company_active_hiring_text">2.6K+ are actively hiring</div>
+      <div class="company_image_list_container">
+        <div class="image_company_div">
+          <img
+            src="assets/Manufactoring/apollo.jpg"
+            alt=""
+            class="company_image"
+          />
+        </div>
+        <div class="image_company_div">
+          <img
+            src="assets/Manufactoring/birla.png"
+            alt=""
+            class="company_image"
+          />
+        </div>
+        <div class="image_company_div">
+          <img
+            src="assets/Manufactoring/jsw.jpg"
+            alt=""
+            class="company_image"
+          />
+        </div>
+        <div class="image_company_div">
+          <img
+            src="assets/Manufactoring/mahindra.jpg"
+            alt=""
+            class="company_image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="company_card_container">
+      <a
+        [routerLink]="['companyList']"
+        [queryParams]="{ companyTag: 'Foriegn MNC' }"
+      >
+        <div class="company_heading_container">
+          <div class="company_text" id="tag">Foriegn MNC</div>
+          <img src="assets/back.png" alt="" class="tags_img" />
+        </div>
+      </a>
+      <div class="company_active_hiring_text">4.4K+ are actively hiring</div>
+      <div class="company_image_list_container">
+        <div class="image_company_div">
+          <img src="assets/MNCs/cococola.jfif" alt="" class="company_image" />
+        </div>
+        <div class="image_company_div">
+          <img src="assets/MNCs/hyundai.jfif" alt="" class="company_image" />
+        </div>
+        <div class="image_company_div">
+          <img src="assets/MNCs/mastercard.jfif" alt="" class="company_image" />
+        </div>
+        <div class="image_company_div">
+          <img src="assets/MNCs/uber.jfif" alt="" class="company_image" />
+        </div>
+      </div>
+    </div>
+    <div class="company_card_container">
+      <a
+        [routerLink]="['companyList']"
+        [queryParams]="{ companyTag: 'E-Commerce' }"
+      >
+        <div class="company_heading_container">
+          <div class="company_text" id="tag">E-Commerce</div>
+          <img src="assets/back.png" alt="" class="tags_img" />
+        </div>
+      </a>
+      <div class="company_active_hiring_text">3.2K+ are actively hiring</div>
+      <div class="company_image_list_container">
+        <div class="image_company_div">
+          <img
+            src="assets/Startup/flipkart.jfif"
+            alt=""
+            class="company_image"
+          />
+        </div>
+        <div class="image_company_div">
+          <img src="assets/Startup/oyo.jfif" alt="" class="company_image" />
+        </div>
+        <div class="image_company_div">
+          <img src="assets/Startup/swiggy.jfif" alt="" class="company_image" />
+        </div>
+        <div class="image_company_div">
+          <img src="assets/Startup/zomato.jfif" alt="" class="company_image" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spaced_container"></div>
+  <div class="top_companies_text_wrapper">
+    <h2 class="top_companies_text">Featured Companies Actively Hiring</h2>
+  </div>
+  <div class="actively_hiring_companies_container">
+    <div
+      *ngFor="let comp of companiesList"
+      class="active_company_container_data"
+    >
+      <div class="company_image_div_container">
+        <img src="assets/approved.png" alt="" class="company_image_div" />
+      </div>
+      <div class="company_heading_review_container">
+        <a
+          [routerLink]="['companyDetails']"
+          [queryParams]="{ companyId: comp.compId }"
+        >
+          <div class="company_text_active_wrapper">
+            <div class="company_text_active">{{ comp.compName }}</div>
+          </div>
+          <div class="rating_review_container">
+            <img src="assets/star.png" alt="" class="rating_star_image" />
+            <div class="rating_text">{{ comp.compRating }}</div>
+            <div class="vertical_container"></div>
+            <div class="review_rating">1.2K+ reviews</div>
+          </div>
+        </a>
+      </div>
+      <div class="company_tagline_description_wrapper">
+        <div class="company_tagline_description" style="height: 70px">
+          {{ comp.compTagLine }}
+        </div>
+      </div>
+      <a
+        [routerLink]="['employee/listOfJobs']"
+        [queryParams]="{ compId: comp.compId }"
+      >
+        <div class="view_jobs_button_wrapper">
+          <button class="view_jobs_button">View Jobs</button>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="spaced_container" style="height: 140px"></div>
+
+  <div class="discover_jobs_popular_by_tags_wrapper">
+    <div class="discover_job_back_container">
+      <img src="assets/career_progress.png" alt="" class="discover_job_image" />
+      <h2 class="dicover_job_text">Discover Jobs Across Popular Roles</h2>
+      <div class="discover_job_tag_text">
+        Select a role and we'll show you relevant jobs for it!
+      </div>
+    </div>
+
+    <h2 class="dicover_job_text_hidden">Discover Jobs Across Popular Roles</h2>
+
+    <div class="discover_job_container_by_tag_data">
+      <div class="grid_job_tag">
+        <div class="job_tag_data">
+          <a
+            [routerLink]="['employee/listOfJobs']"
+            [queryParams]="{ jobName: 'SDE' }"
+          >
+            <div class="job_tag_name">SDE</div>
+            <div class="jobs_arrow_flex_container">
+              <div class="jobs_available_text">8.4K+ Jobs</div>
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </a>
+        </div>
+
+        <div class="job_tag_data">
+          <a
+            [routerLink]="['employee/listOfJobs']"
+            [queryParams]="{ jobName: 'Store Manager' }"
+          >
+            <div class="job_tag_name">Store Manager</div>
+            <div class="jobs_arrow_flex_container">
+              <div class="jobs_available_text">12.4K+ Jobs</div>
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </a>
+        </div>
+        <div class="job_tag_data">
+          <a
+            [routerLink]="['employee/listOfJobs']"
+            [queryParams]="{ jobName: 'Business Development' }"
+          >
+            <div class="job_tag_name">Business Development</div>
+            <div class="jobs_arrow_flex_container">
+              <div class="jobs_available_text">2.9K+ Jobs</div>
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </a>
+        </div>
+        <div class="job_tag_data">
+          <a
+            [routerLink]="['employee/listOfJobs']"
+            [queryParams]="{ jobName: 'Senior Data Engineer' }"
+          >
+            <div class="job_tag_name">Senior Data Engineer</div>
+            <div class="jobs_arrow_flex_container">
+              <div class="jobs_available_text">6.1K+ Jobs</div>
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </a>
+        </div>
+        <div class="job_tag_data">
+          <a
+            [routerLink]="['employee/listOfJobs']"
+            [queryParams]="{ jobName: 'Senior Manager' }"
+          >
+            <div class="job_tag_name">Senior Manager</div>
+            <div class="jobs_arrow_flex_container">
+              <div class="jobs_available_text">3.3K+ Jobs</div>
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </a>
+        </div>
+        <div class="job_tag_data">
+          <a
+            [routerLink]="['employee/listOfJobs']"
+            [queryParams]="{ jobName: 'Sales Manager' }"
+          >
+            <div class="job_tag_name">Sales Manager</div>
+            <div class="jobs_arrow_flex_container">
+              <div class="jobs_available_text">1.6K+ Jobs</div>
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </a>
+        </div>
+        <div class="job_tag_data">
+          <a
+            [routerLink]="['employee/listOfJobs']"
+            [queryParams]="{ jobName: 'Customer Care Executive' }"
+          >
+            <div class="job_tag_name">Customer Care Executive</div>
+            <div class="jobs_arrow_flex_container">
+              <div class="jobs_available_text">4.5K+ Jobs</div>
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </a>
+        </div>
+        <div class="job_tag_data">
+          <a
+            [routerLink]="['employee/listOfJobs']"
+            [queryParams]="{ jobName: 'Mean Stack Developer' }"
+          >
+            <div class="job_tag_name">Mean Stack Developer</div>
+            <div class="jobs_arrow_flex_container">
+              <div class="jobs_available_text">5.3K+ Jobs</div>
+              <img src="assets/back.png" alt="" class="tags_img" />
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="spaced_container" style="height: 140px"></div>
+  <div class="event_flex_container">
+    <div class="upcoming_event_icon_text_wrapper">
+      <div class="events_heading">Upcoming Events and Challenges</div>
+      <div class="event_img_container">
+        <img src="assets/events1.png" alt="" class="event_img" />
+      </div>
+    </div>
+
+    <h2 class="upcoming_events_text">Upcoming Events and Challenges</h2>
+
+    <div class="total_event_container">
+      <div
+        *ngFor="let event of eventsList"
+        class="upcoming_events_container_wrapper"
+      >
+        <div class="upcoming_event_container" style="height: 350px">
+          <div class="event_image_div">
+            <img
+              [src]="'assets/' + event.bannerImage"
+              alt=""
+              class="event_image"
+            />
+          </div>
+          <div class="padding_container">
+            <div class="event_text_name" style="height: 50px">
+              {{ event.eventName }}
+            </div>
+            <div class="event_company_name" style="text-transform: capitalize">
+              {{ event.organizerName }}
+            </div>
+            <div class="event_tag_info">{{ event.tech }}</div>
+            <div class="date_time_enroll_container">
+              <img src="assets/briefcase.png" alt="" class="tags_img_events" />
+              <div class="event_date_time">{{ event.dateTime }}</div>
+              <img src="assets/group.png" alt="" class="tags_img_events" />
+              <div class="event_date_time event_enrollment_no">
+                {{ event.noOfRegistration }} Enrolled
+              </div>
+            </div>
+            <div class="horizontal_line"></div>
+            <div class="rewards_view_details_container">
+              <div class="trophy_reward_container">
+                <img
+                  src="assets/trophy.png"
+                  alt=""
+                  class="tags_img_events small"
+                />
+                <div class="exciting_rewards">Exciting Rewards</div>
+              </div>
+              <a
+                [routerLink]="['employee/eventData']"
+                [queryParams]="{ eventId: event.eventId }"
+                ><button class="view_details_button">View Details</button></a
+              >
+            </div>
+            <div class="event_rights_container">
+              <div class="event_rights">The company holds the Event rights</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spaced_container"></div>
+</div>

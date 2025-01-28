@@ -1,0 +1,699 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f4fa;
+}
+
+.job-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 1%;
+}
+
+.login_reigster_container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar_ul_list_heading {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
+
+.logo_anchor_container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar_li_list {
+  cursor: default;
+  list-style-type: none;
+  margin: 0 8%;
+}
+
+li,
+ul,
+a {
+  text-decoration: none;
+  text-decoration-line: none;
+  list-style-type: none;
+  font-family: "Inter";
+}
+
+a:visited {
+  outline: none;
+  text-decoration: none;
+}
+
+.header_anchor_tags {
+  font-weight: 500;
+  line-height: 20px;
+  font-size: 16px;
+  color: #121224;
+  font-family: "Inter";
+}
+
+.login_button {
+  width: 100px;
+  height: 40px;
+  border: 1px solid #275df5;
+  color: #275df5;
+  font-weight: bold;
+  border-radius: 40px;
+}
+
+.profile-dropdown-container:hover {
+  background-color: #dde9f8;
+  border-radius: 5px;
+}
+
+.profile-dropdown-container {
+  position: relative;
+}
+
+.profile-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+hr {
+  padding: 0;
+  margin: 0;
+}
+
+.register_button {
+  width: 100px;
+  height: 40px;
+  background-color: #f05537;
+  border: none;
+  color: #fff;
+  border-radius: 40px;
+}
+
+.dropdown_item_data {
+  padding: 5px 10px;
+  font-weight: 600;
+}
+
+.heading_tagline_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#custom-layout {
+  display: flex;
+}
+
+.custom-middle {
+  flex: 0.7;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.custom-right {
+  flex: 0.3;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.custom-right-sub {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(77, 76, 76, 0.2);
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+}
+
+.share_image_div {
+  margin-right: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#custom-right-sub {
+  margin-top: 0;
+}
+
+.custom-middle-sub {
+  margin-bottom: 20px;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(30, 10, 58, 0.04);
+  transition: box-shadow 0.2s linear;
+}
+
+.company-name {
+  color: rgb(81, 81, 81);
+}
+
+.company-logo {
+  height: 70px;
+  width: auto;
+  border-radius: 20px;
+}
+
+.company-name-logo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.location {
+  width: 1.5%;
+  height: 1.5%;
+  margin: 5px;
+}
+
+.Job-tag {
+  padding: 0 8px;
+}
+
+.border,
+.right_border {
+  border: none;
+  height: 2px;
+  margin: 1rem 0;
+  background-color: #d3d2d4;
+}
+
+.info-about-job {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.posted,
+.opening,
+.applicant,
+.review-by-and-time,
+.reported-benefit,
+.benefit-name,
+.service-name,
+.service-desc-more {
+  color: rgb(157, 156, 156);
+}
+
+/* CSS */
+.button-17 {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 2px solid rgb(71, 71, 191);
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: rgb(71, 71, 191);
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+  will-change: transform, opacity;
+  z-index: 0;
+}
+
+#Login-to-apply {
+  background-color: rgb(71, 71, 191);
+  color: #fff;
+}
+
+.button-17:hover {
+  background: #f6f9fe;
+  color: #174ea6;
+}
+
+.button-17:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67/ 30%), 0 8px 12px 6px rgb(60 64 67/ 15%);
+  outline: none;
+}
+
+.button-17:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.button-17:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 2px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 6px 10px 4px;
+}
+
+.button-17:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.button-17:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 4px 4px 0,
+    rgba(60, 64, 67, 0.15) 0 8px 12px 6px;
+}
+
+.button-17:disabled {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.opening-class {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-role,
+.about-industry,
+.about-department,
+.about-Employment,
+.about-role-category,
+.about-UG,
+.about-key-skills,
+.about-company-role {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  padding: 0;
+}
+
+.Job-description,
+.required-candidate-profile,
+.role,
+.Industry,
+.department,
+.employment,
+.role-category,
+.education,
+.UG,
+.key-skills,
+.about-company,
+.company-role,
+.address,
+.imposter,
+.job-name-of-intrested-job,
+.company-name-of-intrested-comp,
+.Review,
+.right-container-headings,
+.review-by-and-time,
+.paragraph,
+.Likes-of-intrested-job,
+.reported-benefit,
+.service-name,
+.service-desc,
+.service-desc-more {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.right-main-heading {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hr-email,
+.required-candidate-profile-details,
+.role-details,
+.Industry-details,
+.department-details,
+.employment-details,
+.role-category-details,
+.UG-details,
+.key-skills-details,
+.about-company-details,
+.company-role-details,
+.imposter-details,
+.comment {
+  color: rgb(45, 44, 44);
+  font-size: 14px;
+  margin-top: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Job-description {
+  font-size: 20px;
+}
+
+/* CSS */
+.Infrastructure {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
+  margin: 0 0.5rem;
+}
+
+.Infrastructure:hover {
+  background: #f6f9fe;
+  color: #001941;
+}
+
+.Infrastructure:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67/ 30%), 0 8px 12px 6px rgb(60 64 67/ 15%);
+  outline: none;
+}
+
+.Infrastructure:focus {
+  outline: none;
+  border: 2px solid #0b4aaf;
+}
+
+.Infrastructure:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.Infrastructure:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 2px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 6px 10px 4px;
+}
+
+.Infrastructure:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.Infrastructure:not(:disabled):active {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 4px 4px 0,
+    rgba(60, 64, 67, 0.15) 0 8px 12px 6px;
+}
+
+.Infrastructure:disabled {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.key-skills-container {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.social-media {
+  width: 4%;
+  height: auto;
+}
+
+.service-intrested-provider {
+  width: 100px;
+  height: 50px;
+}
+
+.social-media,
+.img-of-benefit {
+  padding: 0 5px;
+}
+
+.img-of-benefit {
+  width: 40%;
+  height: auto;
+}
+
+.location-instrested-job {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.all-about-intrested-job {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.company-name-job-name {
+  width: 80%;
+}
+
+.intrested-job-logo-div {
+  width: 20%;
+}
+
+.intrested-job-logo {
+  width: 40%;
+}
+
+.right_border {
+  margin: 0.2rem 0;
+}
+
+.Job-basic-details {
+  color: #020202;
+  display: flex;
+}
+
+.Job-basic-details h5 {
+  margin-right: 10px;
+}
+
+.Job-basic-details .rating label {
+  color: gold;
+  font-size: 24px;
+  margin-right: 5px;
+  text-shadow: -1px -1px 1px black, 1px -1px 1px black, -1px 1px 1px black,
+    1px 1px 1px black;
+}
+
+.rating label:before {
+  content: "\2605";
+}
+
+.location-ins {
+  width: 5%;
+  height: auto;
+  padding-right: 5px;
+}
+
+.location-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: gray;
+}
+
+.view-all {
+  display: flex;
+  justify-content: center;
+}
+
+.review-and-read-all-view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.read-all-review {
+  text-decoration: none;
+  color: #0b4aaf;
+  font-size: 12px;
+}
+
+.review-by-and-time,
+.reported-benefit,
+.benefit-name,
+.service-name {
+  font-size: small;
+}
+
+.rating {
+  direction: rtl;
+  align-items: flex-start;
+  display: inline-flex;
+}
+
+.rating input[type="radio"] {
+  display: none;
+}
+
+.rating label {
+  display: inline-block;
+  cursor: pointer;
+  color: #ccc; /* Initially colorless */
+  font-size: 24px;
+  margin-right: 10px;
+  transition: color 0.3s ease; /* Added transition */
+}
+
+.rating label:hover,
+.rating input[type="radio"]:hover ~ label {
+  color: #ffd700; /* Change color on hover */
+}
+
+.rating input[type="radio"]:checked ~ label:before {
+  color: #ffd700; /* Change color for selected stars */
+}
+
+.full-review-container {
+  padding: 2%;
+}
+
+.single-benefit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  padding: 10px;
+}
+
+.continer-of-benefit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.benefit-name {
+  text-align: center;
+}
+
+.all-benefit {
+  padding: 10px;
+}
+
+.nI-gNb-company-logo {
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin: 2% 0 0 0;
+  background-color: #fff;
+  padding: 2% 3% 0 3%;
+}
+
+.connect_heading {
+  font-weight: 700;
+  font-size: 14px;
+  color: #121224;
+  margin: 15px 0 15px 0;
+}
+
+.social_anchor_tag_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer_li {
+  line-height: 18px;
+  padding-top: 12px;
+}
+
+.footer_li_a {
+  color: #121224;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-decoration: none;
+  -webkit-transition: color 0.25s ease;
+  transition: color 0.25s ease;
+}
+
+.nI-gNb-app-store {
+  background: #fff;
+  border: 1px solid #e7e7f1;
+  border-radius: 20px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 102px;
+  margin-left: 93px;
+  padding: 24px;
+  position: relative;
+  z-index: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+}
+
+.nI-gNb-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.nI-gNb-description {
+  color: #474d6a;
+  font-size: 13px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  margin-top: 5px;
+}
+
+.nI-gNb-app-cont {
+  padding-top: 20px;
+}
+
+.tags_img {
+  height: 25px;
+  width: 25px;
+}

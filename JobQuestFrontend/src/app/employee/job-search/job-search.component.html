@@ -1,0 +1,589 @@
+<div style="margin-top: 10px" id="scrollToFirstBlock">
+  <div
+    class="search_bar_container"
+    style="margin-bottom: 20px; margin-top: 20px"
+  >
+    <form
+      class="search_form_tag"
+      style="width: 100%; display: flex; align-items: center"
+    >
+      <img
+        src="assets/images/search_icon.png"
+        alt=""
+        class="search_icon_container"
+      />
+      <input
+        [(ngModel)]="searchQuery"
+        class="suggestor_input"
+        name="searchText"
+        type="text"
+        style="width: 100%"
+        placeholder="Enter skills / designations / companies"
+      />
+      <button (click)="searchJobs()" class="search_button">Search</button>
+    </form>
+  </div>
+  <div class="containerrr">
+    <div id="left-container" class="main-container">
+      <div id="left-container" class="main-container">
+        <div id="all-filters">
+          <div id="margin">
+            <div
+              class="gettingAllJob"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+              "
+            >
+              <h4 class="all-filters-heading">All Filters</h4>
+              <form action="FetchingAllJobs" method="get">
+                <input
+                  class="btn btn-outline-secondary"
+                  type="submit"
+                  value="Remove All Filters"
+                  (click)="removeAllFilters()"
+                />
+              </form>
+            </div>
+            <br />
+
+            <div class="border"></div>
+
+            <div id="filter-types">
+              <form action="FetchingJobNyCompType" method="get">
+                <h4>Company Type</h4>
+                <input
+                  type="checkbox"
+                  value="Engineering"
+                  name="myCheckBox"
+                  [checked]="selectedCompanyTypes.includes('Engineering')"
+                  (change)="toggleSelectedCompanyType('Engineering')"
+                />
+                <label class="padding" for="Engineering">Engineering</label
+                ><br />
+                <input
+                  type="checkbox"
+                  value="Analytics"
+                  name="myCheckBox"
+                  [checked]="selectedCompanyTypes.includes('Analytics')"
+                  (change)="toggleSelectedCompanyType('Analytics')"
+                />
+                <label class="padding" for="Analytics">Analytics</label><br />
+                <input
+                  type="checkbox"
+                  value="Fortune 500"
+                  name="myCheckBox"
+                  [checked]="selectedCompanyTypes.includes('Fortune 500')"
+                  (change)="toggleSelectedCompanyType('Fortune 500')"
+                />
+                <label class="padding" for="Fortune 500">Fortune 500</label
+                ><br />
+                <input
+                  type="checkbox"
+                  value="Software & Development"
+                  name="myCheckBox"
+                  [checked]="
+                    selectedCompanyTypes.includes('Software & Development')
+                  "
+                  (change)="toggleSelectedCompanyType('Software & Development')"
+                />
+                <label class="padding" for="Software & Development"
+                  >Software & Development</label
+                ><br />
+                <br />
+                <button
+                  (click)="filterJobsByCompanyType()"
+                  class="btn btn-primary filter_btn"
+                  value="Filter"
+                >
+                  Filter
+                </button>
+              </form>
+            </div>
+
+            <br />
+            <div class="border"></div>
+
+            <div id="filter-types">
+              <form action="FetchingJobNyWorKMode" method="get">
+                <h4>Work Mode</h4>
+                <input
+                  type="checkbox"
+                  value="WFO"
+                  name="workMode"
+                  [checked]="SelectedJobWorkMode.includes('WFO')"
+                  (change)="toggleSelectedJobWorkMode('WFO')"
+                />
+                <label class="padding" for="Work-from-Office"
+                  >Work from Office</label
+                >
+                <br />
+                <input
+                  type="checkbox"
+                  value="Hybrid"
+                  name="workMode"
+                  [checked]="SelectedJobWorkMode.includes('Hybrid')"
+                  (change)="toggleSelectedJobWorkMode('Hybrid')"
+                />
+                <label class="padding" for="Hybrid">Hybrid</label>
+                <br />
+                <input
+                  type="checkbox"
+                  value="WFH"
+                  name="workMode"
+                  [checked]="SelectedJobWorkMode.includes('WFH')"
+                  (change)="toggleSelectedJobWorkMode('WFH')"
+                />
+                <label class="padding" for="Work-from-Home"
+                  >Work from Home</label
+                >
+                <br />
+                <br />
+                <button
+                  (click)="filterJobsByWorkMode()"
+                  class="btn btn-primary filter_btn"
+                  value="Filter"
+                >
+                  Filter
+                </button>
+              </form>
+            </div>
+            <br />
+            <div class="border"></div>
+            <div id="filter-types">
+              <form method="get">
+                <h4>Industry</h4>
+                <input
+                  type="checkbox"
+                  value="Software Product"
+                  name="IndustryType"
+                  [checked]="selectedIndustryType.includes('Software Product')"
+                  (change)="toggleSelectedIndustryType('Software Product')"
+                />
+                <label class="padding" for="Software Product"
+                  >Software Product</label
+                ><br />
+                <input
+                  type="checkbox"
+                  value="IT Services & Consulting"
+                  name="IndustryType"
+                  [checked]="
+                    selectedIndustryType.includes('IT Services & Consulting')
+                  "
+                  (change)="
+                    toggleSelectedIndustryType('IT Services & Consulting')
+                  "
+                />
+                <label class="padding" for="IT Services & Consulting"
+                  >IT Services & Consulting</label
+                ><br />
+                <input
+                  type="checkbox"
+                  value="Internet (E-Commerce)"
+                  name="IndustryType"
+                  [checked]="
+                    selectedIndustryType.includes('Internet (E-Commerce)')
+                  "
+                  (change)="toggleSelectedIndustryType('Internet (E-Commerce)')"
+                />
+                <label class="padding" for="Internet (E-Commerce)"
+                  >Internet (E-Commerce)</label
+                ><br />
+                <input
+                  type="checkbox"
+                  value="NBFC"
+                  name="IndustryType"
+                  [checked]="selectedIndustryType.includes('NBFC')"
+                  (change)="toggleSelectedIndustryType('NBFC')"
+                />
+                <label class="padding" for="NBFC">NBFC</label><br />
+                <br />
+                <button
+                  (click)="filterJobsByIndustryType()"
+                  class="btn btn-primary filter_btn"
+                  value="Filter"
+                >
+                  Filter
+                </button>
+              </form>
+            </div>
+            <br />
+            <div class="border"></div>
+            <div id="filter-types">
+              <form method="get">
+                <h4>Department</h4>
+                <input
+                  type="checkbox"
+                  value="Human Resources"
+                  name="department"
+                  [checked]="selectedDepartment.includes('Human Resources')"
+                  (change)="toggleSelectedDepartment('Human Resources')"
+                />
+                <label class="padding" for="Human Resources"
+                  >Human Resources</label
+                ><br />
+                <input
+                  type="checkbox"
+                  value="Data Science & Analytics"
+                  name="department"
+                  [checked]="
+                    selectedDepartment.includes('Data Science & Analytics')
+                  "
+                  (change)="
+                    toggleSelectedDepartment('Data Science & Analytics')
+                  "
+                />
+                <label class="padding" for="Data Science & Analytics"
+                  >Data Science & Analytics</label
+                ><br />
+                <input
+                  type="checkbox"
+                  value="Engineering - Software & QA"
+                  name="department"
+                  [checked]="
+                    selectedDepartment.includes('Engineering - Software & QA')
+                  "
+                  (change)="
+                    toggleSelectedDepartment('Engineering - Software & QA')
+                  "
+                />
+                <label class="padding" for="Engineering - Software & QA"
+                  >Engineering - Software & QA</label
+                ><br />
+                <input
+                  type="checkbox"
+                  value="Sales & Business Development"
+                  name="department"
+                  [checked]="
+                    selectedDepartment.includes('Sales & Business Development')
+                  "
+                  (change)="
+                    toggleSelectedDepartment('Sales & Business Development')
+                  "
+                />
+                <label class="padding" for="Sales & Business Development"
+                  >Sales & Business Development</label
+                ><br />
+                <br />
+                <button
+                  (click)="filterJobsByDepartment()"
+                  class="btn btn-primary filter_btn"
+                  value="Filter"
+                >
+                  Filter
+                </button>
+              </form>
+            </div>
+            <br />
+            <div class="border"></div>
+            <div id="filter-types">
+              <form method="get">
+                <h4>Job Type</h4>
+                <input
+                  type="checkbox"
+                  value="Accounts Manager"
+                  name="jobType"
+                  [checked]="selectedJobType.includes('Accounts Manager')"
+                  (change)="toggleSelectedJobType('Accounts Manager')"
+                />
+                <label class="padding" for="Accounts Manager"
+                  >Accounts Manager</label
+                ><br />
+                <input
+                  type="checkbox"
+                  value="Business Development"
+                  name="jobType"
+                  [checked]="selectedJobType.includes('Business Development')"
+                  (change)="toggleSelectedJobType('Business Development')"
+                />
+                <label class="padding" for="Business Development"
+                  >Business Development</label
+                ><br />
+                <input
+                  type="checkbox"
+                  value="Customer Care Executive"
+                  name="jobType"
+                  [checked]="
+                    selectedJobType.includes('Customer Care Executive')
+                  "
+                  (change)="toggleSelectedJobType('Customer Care Executive')"
+                />
+                <label class="padding" for="Customer Care Executive"
+                  >Customer Care Executive</label
+                ><br />
+                <input
+                  type="checkbox"
+                  value="Sales Manager"
+                  name="jobType"
+                  [checked]="selectedJobType.includes('Sales Manager')"
+                  (change)="toggleSelectedJobType('Sales Manager')"
+                />
+                <label class="padding" for="Sales Manager">Sales Manager</label
+                ><br />
+                <br />
+                <button
+                  (click)="filterJobsByJobType()"
+                  class="btn btn-primary filter_btn"
+                  value="Filter"
+                >
+                  Filter
+                </button>
+              </form>
+            </div>
+            <br />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Job-list" class="main-container">
+      <div
+        *ngIf="jobs.length === 0 && company.length === 0 && event.length === 0"
+      >
+        <div class="not-found-container">
+          <img
+            src="assets/DataImage/empty-waiting2.png"
+            alt="Page Not Found"
+            class="not-found-image"
+          />
+          <p class="not-found-text">Oops!!! No Data Found For the Search!!!</p>
+        </div>
+      </div>
+      <div *ngFor="let comp of company" class="Jobs">
+        <a
+          [routerLink]="['/companyDetails']"
+          [queryParams]="{ companyId: comp.compId }"
+          style="text-decoration: none"
+        >
+          <div class="Job-and-company-image-and-name">
+            <div class="Job-and-company-name">
+              <div class="Job-name">{{ comp.compName }}</div>
+              <div class="Job-basic-details">
+                <div class="comp_name">{{ comp.compName }}</div>
+                <div class="rating" style="margin: 0.5rem">
+                  <label></label>
+                </div>
+                <div class="Review">
+                  {{ comp.compRating }} &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+                  3352 Review
+                </div>
+              </div>
+            </div>
+            <div class="images-of-company-in-job-list">
+              <img
+                class="images-in-job-list"
+                src="assets/{{ comp.compPosterImg }}"
+                alt="NA"
+              />
+            </div>
+          </div>
+          <div class="Job-details">
+            <img src="assets/images/suitcase.png" alt="NA" class="location" />
+            <div class="details">{{ comp.compType }}</div>
+            <div>
+              <div class="divider_line">|</div>
+            </div>
+            <div>
+              <div class="divider_line">|</div>
+            </div>
+            <img src="assets/images/location.png" alt="NA" class="location" />
+            <div class="details">{{ comp.compHeadquaters }}</div>
+          </div>
+
+          <div class="short-job-desc">
+            <div class="asset_img_div">
+              <img src="assets/images/page.png" alt="NA" class="location" />
+            </div>
+            <div class="job-desc">{{ comp.compDesc.substring(0, 190) }}</div>
+          </div>
+
+          <div class="tags">
+            <ng-container
+              *ngFor="let tagNumber of [1, 2, 3, 4]; let isFirst = first"
+            >
+              <ng-container *ngIf="comp['tag' + tagNumber]">
+                <div *ngIf="!isFirst" class="separator">|</div>
+                <div class="Job-tag">{{ comp["tag" + tagNumber] }}</div>
+              </ng-container>
+            </ng-container>
+          </div>
+          <div class="button">
+            <button class="save-button" onclick="toggleBookmark(this)">
+              <svg
+                class="bookmark-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  class="bookmark-path"
+                  d="M19 2H5c-1.1 0-1.99.9-1.99 2L3 21l8-5 8 5V4c0-1.1-.9-2-2-2"
+                />
+              </svg>
+              Save
+            </button>
+          </div>
+        </a>
+      </div>
+      <div *ngFor="let job of jobs">
+        <div *ngIf="job.jobActive" class="Jobs">
+          <a
+            [routerLink]="['/singleJob']"
+            [queryParams]="{ jobId: job.jobId }"
+            style="text-decoration: none"
+          >
+            <div class="Job-and-company-image-and-name">
+              <div class="Job-and-company-name">
+                <div class="Job-name">{{ job.jobName }}</div>
+                <div class="Job-basic-details">
+                  <div class="comp_name">{{ job.compId.compName }}</div>
+                  <div class="rating" style="margin: 0.5rem">
+                    <label></label>
+                  </div>
+                  <div class="Review">
+                    {{ job.compId.compRating }} &nbsp;&nbsp;&nbsp; |
+                    &nbsp;&nbsp;&nbsp; 3353 Review
+                  </div>
+                </div>
+              </div>
+              <div class="images-of-company-in-job-list">
+                <img
+                  class="images-in-job-list"
+                  alt="NA"
+                  src="assets/{{ job.compId.compPosterImg }}"
+                />
+              </div>
+            </div>
+            <div class="Job-details">
+              <img src="assets/suitcase.png" alt="NA" class="location" />
+              <div class="year-exp">
+                <div class="text_info_more">{{ job.expReq }} yrs</div>
+              </div>
+              <div>
+                <div class="divider_line">|</div>
+              </div>
+              <div class="salary">
+                <div class="text_info_more">
+                  Rs {{ job.salRangeMin }} L - {{ job.salRangeMax }} L Salary
+                </div>
+              </div>
+              <div class="details">
+                <div>|</div>
+              </div>
+              <div class="details">
+                <img src="assets/location.png" alt="NA" class="location" />
+              </div>
+              <div class="text_info_more location-name">
+                {{ job.location.substring(0, 19) }}
+              </div>
+            </div>
+            <div class="short-job-desc">
+              <img src="assets/page.png" alt="NA" class="location" />
+              <div class="job-desc details">
+                {{ job.jobDesc.substring(0, 190) }}
+              </div>
+            </div>
+            <div class="tags">
+              <ng-container
+                *ngFor="
+                  let skill of job.keySkills.split(',');
+                  let isFirst = first;
+                  let i = index
+                "
+              >
+                <ng-container *ngIf="i < 4">
+                  <div *ngIf="!isFirst" class="separator">|</div>
+                  <div class="Job-tag">{{ skill }}</div>
+                </ng-container>
+              </ng-container>
+            </div>
+
+            <div class="button">
+              <button class="save-button" onclick="toggleBookmark(this)">
+                <svg
+                  class="bookmark-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    class="bookmark-path"
+                    d="M19 2H5c-1.1 0-1.99.9-1.99 2L3 21l8-5 8 5V4c0-1.1-.9-2-2-2"
+                  />
+                </svg>
+                Save
+              </button>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div *ngFor="let eve of event" class="Jobs">
+        <a
+          [routerLink]="['/companyDetails', eve.eventId]"
+          [routerLink]="['/employee/eventData']"
+          [queryParams]="{ eventId: eve.eventId }"
+          style="text-decoration: none"
+        >
+          <div class="Job-and-company-image-and-name">
+            <div class="Job-and-company-name">
+              <div class="Job-name">{{ eve.eventName.substring(0, 25) }}</div>
+              <div class="Job-basic-details">
+                <div class="comp_name">{{ eve.industryType }}</div>
+                <div class="rating" style="margin: 0.5rem">
+                  <label></label>
+                </div>
+                <div class="Review">
+                  {{ eve.rating }} &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+                  {{ eve.organizerName }}
+                </div>
+              </div>
+            </div>
+            <div class="images-of-company-in-job-list">
+              <img
+                class="images-in-job-list"
+                src="assets/coding_logo.gif"
+                alt="NA"
+              />
+            </div>
+          </div>
+          <div class="short-job-desc">
+            <div class="asset_img_div">
+              <img src="assets/images/page.png" alt="NA" class="location" />
+            </div>
+            <div class="job-desc">
+              {{ eve.aboutContest.substring(0, 190) }}...
+            </div>
+          </div>
+
+          <div class="tags">
+            <ng-container
+              *ngFor="
+                let skill of eve.tech.split(',');
+                let isFirst = first;
+                let i = index
+              "
+            >
+              <ng-container *ngIf="i < 4">
+                <div *ngIf="!isFirst" class="separator">|</div>
+                <div class="Job-tag">{{ skill }}</div>
+              </ng-container>
+            </ng-container>
+          </div>
+          <div class="button">
+            <button class="save-button" onclick="toggleBookmark(this)">
+              <svg
+                class="bookmark-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  class="bookmark-path"
+                  d="M19 2H5c-1.1 0-1.99.9-1.99 2L3 21l8-5 8 5V4c0-1.1-.9-2-2-2"
+                />
+              </svg>
+              Save
+            </button>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

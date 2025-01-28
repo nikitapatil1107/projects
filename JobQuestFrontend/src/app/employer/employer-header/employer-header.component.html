@@ -1,0 +1,91 @@
+<div class="header_container" style="padding: 1rem 2rem">
+  <div class="logo_anchor_container">
+    <a (click)="onRoutingEmployerHome()">
+      <div class="naukri_logo_container">
+        <img
+          src="assets/naukri_logo.png"
+          alt=""
+          class="logo_img"
+          style="cursor: pointer"
+        />
+      </div>
+    </a>
+    <ul class="navbar_ul_list_heading" style="margin-left: 20px">
+      <li class="navbar_li_list">
+        <a
+          (click)="onRoutingCompany()"
+          class="header_anchor_tags"
+          style="cursor: pointer"
+          >Your Company</a
+        >
+      </li>
+      <li class="navbar_li_list">
+        <a
+          (click)="onRoutingToAddJobs()"
+          class="header_anchor_tags"
+          style="cursor: pointer"
+          >Add Job</a
+        >
+      </li>
+      <li class="navbar_li_list">
+        <a
+          (click)="onViewApplicationRouting()"
+          class="header_anchor_tags"
+          style="cursor: pointer"
+          >View Application</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div>
+    <div class="profile-dropdown-container">
+      <img
+        src="assets/business-profile.png"
+        style="width: 40px; height: 40px; cursor: pointer"
+        alt="Profile"
+        class="profile-icon"
+        id="profileDropdownToggle"
+        [ngClass]="{ 'dropdown-toggle': true, show: isDropdownOpen }"
+        (click)="toggleDropdown()"
+      />
+      <img
+        alt=""
+        src="assets/down-arrow.png"
+        style="width: 30px; height: 30px; cursor: pointer"
+      />
+      <div
+        class="dropdown-menu profile-dropdown-menu"
+        [ngClass]="{ show: isDropdownOpen }"
+        aria-labelledby="profileDropdownToggle"
+      >
+        <a
+          class="dropdown-item dropdown_item_data cursor_pointer"
+          style="padding: 5px 10px; cursor: pointer"
+          (click)="onRoutingCompany()"
+          >Company Details</a
+        >
+        <hr style="padding: 0; margin: 2px 0" />
+        <a
+          class="dropdown-item dropdown_item_data cursor_pointer"
+          style="padding: 5px 10px; cursor: pointer"
+          (click)="onRoutingToAddJobs()"
+          >Add Jobs</a
+        >
+        <hr style="padding: 0; margin: 2px 0" />
+        <a
+          class="dropdown-item dropdown_item_data cursor_pointer"
+          style="padding: 5px 10px; cursor: pointer"
+          (click)="onViewApplicationRouting()"
+          >View Applications</a
+        >
+        <hr style="padding: 0; margin: 2px 0" />
+        <a
+          class="dropdown-item dropdown_item_data cursor_pointer"
+          style="padding: 5px 10px; cursor: pointer"
+          (click)="logout()"
+          >Logout</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

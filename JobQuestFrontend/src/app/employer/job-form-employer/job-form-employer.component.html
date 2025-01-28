@@ -1,0 +1,266 @@
+<app-employer-header></app-employer-header>
+<div class="containerr">
+  <h1 class="title_heading_tag">Add Your Job Profile</h1>
+
+  <div class="profile_body_container">
+    <div class="about_container">
+      <div class="tell_about_yourself_data">
+        <div
+          class="about_text"
+          style="font-size: 16px; line-height: 20px; font-weight: 600"
+        >
+          About
+        </div>
+        <div class="about_text_subtitle">
+          Tell us about the job you want to add
+        </div>
+      </div>
+      <div class="about_yourself_form_container">
+        <form
+          [formGroup]="jobProfileFormData"
+          (ngSubmit)="addBasicInfoOfJob()"
+          class="about_yourself_form"
+        >
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Job Name&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="jobName"
+            placeholder="Enter Job Name here"
+            formControlName="jobName"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Job Location&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="location"
+            placeholder="Enter job location"
+            formControlName="location"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Experience Required&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="expReq"
+            placeholder="Enter range of Experience Required"
+            formControlName="expReq"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Key Skils for the Job&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="keySkills"
+            placeholder="Enter key skills for the job"
+            formControlName="keySkills"
+          />
+          <div class="little_spaced_container"></div>
+
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Job Description&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <textarea
+            name="jobDesc"
+            id=""
+            cols="70"
+            rows="7"
+            class="text-md"
+            placeholder="Enter your Job Description Here"
+            formControlName="jobDesc"
+          ></textarea>
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Role of Job&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="role"
+            placeholder="Enter role for the job"
+            formControlName="role"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Industry Type of the Job&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="industryType"
+            placeholder="Enter industry type of job"
+            formControlName="industryType"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Department Related to Job&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="department"
+            placeholder="Enter department related to job"
+            formControlName="department"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Employment Type&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="empType"
+            placeholder="Enter Employment Type of Job"
+            formControlName="empType"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Role Category&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="roleCategory"
+            placeholder="Enter Role category of Job"
+            formControlName="roleCategory"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Education&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="education"
+            placeholder="Enter Education Required for Job"
+            formControlName="education"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Salary Range Min (In LPA)&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="salRangeMin"
+            placeholder="Enter Minimum Salary Range for Job"
+            formControlName="salRangeMin"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Salary Range Max (In LPA)&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="salRangeMax"
+            placeholder="Enter Maximum Salary Range for Job"
+            formControlName="salRangeMax"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Company Type&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="compType"
+            placeholder="Enter Company Type"
+            formControlName="compType"
+          />
+          <div class="little_spaced_container"></div>
+          <div class="col-6 col-md-4">
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Select Work Mode for Job Role&nbsp;<span class="asterik_color">*</span>
+            </div>
+            <select
+              class="selectpicker styled-select"
+              data-style="btn-info"
+              style="width: 450px"
+              name="workMode"
+              formControlName="workMode"
+            >
+              <option value="" class="selection_text">Select Work Mode</option>
+              <option value="WFO">Work From Office</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="WFH">Work From Home</option>
+            </select>
+          </div>
+          <div class="button_container">
+            <button class="cancel_button">Cancel</button>
+            <button class="save_work_button">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

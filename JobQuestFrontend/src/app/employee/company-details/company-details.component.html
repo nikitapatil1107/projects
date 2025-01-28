@@ -1,0 +1,326 @@
+<div class="details_container">
+  <div class="banner_img">
+    <img src="assets/{{ companyDetails.compBannerImg }}" alt="company_banner" />
+  </div>
+
+  <div class="overlay_comapny_banner"></div>
+
+  <div class="company_intro" style="top: 20%">
+    <div class="company_logo">
+      <img src="assets/{{ companyDetails.compPosterImg }}" alt="" />
+    </div>
+    <div class="company_intro_desc">
+      <div class="left_desc">
+        <div class="info">
+          <div class="name">{{ companyDetails.compName }}</div>
+          <div class="rate">
+            <img alt="" src="assets/star.png" /><span>{{
+              companyDetails.compRating
+            }}</span>
+          </div>
+          <div class="reviews">
+            ( {{ companyDetails.noOfFollower }} reviews )
+          </div>
+        </div>
+        <div class="tagline">{{ companyDetails.compTagLine }}</div>
+        <div class="tags">
+          <div>{{ companyDetails.tag1 }}</div>
+          <div>{{ companyDetails.tag2 }}</div>
+          <div>{{ companyDetails.tag3 }}</div>
+          <div>{{ companyDetails.tag4 }}</div>
+          z
+        </div>
+      </div>
+      <div class="right_desc">
+        <div class="followers">{{ companyDetails.noOfFollower }} followers</div>
+        <div class="follow_button">Follow</div>
+      </div>
+    </div>
+  </div>
+  <div class="company_about_container">
+    <div class="about_left">
+      <div class="company_about">
+        <div class="about_heading">About {{ companyDetails.compName }}</div>
+        <div class="about_desc">{{ companyDetails.compDesc }}</div>
+      </div>
+
+      <div
+        class="employee_salaries"
+        style="background: linear-gradient(180deg, #fff, #fff3dd 96.87%)"
+      >
+        <div class="salaries_heading">
+          Departments hiring at {{ companyDetails.compName }}
+        </div>
+        <div class="salaries_card_container">
+          <div
+            class="for_loop_container"
+            *ngFor="let job of companyDetails.jobs"
+          >
+            <div *ngIf="job.jobActive">
+              <a class="salary_card" href="/singleJob?jobId={{ job.jobId }}">
+                <div
+                  class="desig_name"
+                  style="font-size: 0.9rem; font-weight: bolder"
+                >
+                  {{ job.jobName }}
+                </div>
+                <span class="desig_desc"
+                  >with {{ job.expReq }} yrs of experience
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="company_benefits">
+        <div class="benefits_heading">Benefits reported by employees</div>
+        <div class="benefits_cards_container">
+          <div class="benefits_card" style="width: 30%">
+            <span class="material-symbols-outlined"> school </span>
+            <span class="card_name">Education Assistance</span>
+          </div>
+          <div class="benefits_card" style="width: 30%">
+            <span class="material-symbols-outlined"> interactive_space </span>
+            <span class="card_name">Soft Skill Training</span>
+          </div>
+          <div class="benefits_card" style="width: 30%">
+            <span class="material-symbols-outlined"> emoji_transportation </span
+            ><span class="card_name">Transportation</span>
+          </div>
+          <div class="benefits_card" style="width: 30%">
+            <span class="material-symbols-outlined"> work </span
+            ><span class="card_name">Job Training</span>
+          </div>
+          <div class="benefits_card" style="width: 30%">
+            <span class="material-symbols-outlined"> restaurant </span
+            ><span class="card_name">Free Food</span>
+          </div>
+          <div class="benefits_card" style="width: 30%">
+            <span class="material-symbols-outlined"> home_work </span>
+            <span class="card_name">Work From Home</span>
+          </div>
+          <div class="benefits_card" style="width: 30%">
+            <span class="material-symbols-outlined"> nightlife </span>
+            <span class="card_name">Team Outings</span>
+          </div>
+          <div class="benefits_card" style="width: 30%">
+            <span class="material-symbols-outlined"> account_child_invert </span
+            ><span class="card_name">Child Care</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="employee_salaries">
+        <div class="salaries_heading">Employee Salaries</div>
+        <div class="salaries_card_container">
+          <div
+            class="salary_card_avg"
+            style="width: 40%"
+            *ngFor="let job of companyDetails.jobs"
+          >
+            <span class="desig_name">{{ job.jobName }}</span>
+            <span class="desig_desc"
+              >with {{ job.expReq }} yrs of experience
+            </span>
+            <div class="salary_bar">
+              <div class="avg_salary">
+                {{ (job.salRangeMin + job.salRangeMax) / 2 }} LPA
+              </div>
+              <div class="salary_divider_container">
+                <div class="salary_divider"></div>
+                <div class="marker"></div>
+                <div class="salary_divider"></div>
+              </div>
+              <div class="salary_range">
+                <span>{{ job.salRangeMin }} LPA</span>
+                <span>{{ job.salRangeMax }} LPA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="more_information">
+        <div class="info_heading">More Information</div>
+        <div class="info_about">
+          <div class="info">
+            Type: <span class="info_value">{{ companyDetails.compType }}</span>
+          </div>
+          <div class="info">
+            Founded:
+            <span class="info_value">{{ companyDetails.foundedAt }}</span>
+          </div>
+          <div class="info">
+            Headquarters:
+            <span class="info_value">{{ companyDetails.compHeadquaters }}</span>
+          </div>
+          <div class="info">
+            Company Size: <span class="info_value">10001 - 50000</span>
+          </div>
+          <div class="info">
+            Website:
+            <a href="#" class="info_value">{{
+              companyDetails.compWebsiteUrl
+            }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about_right">
+      <div class="adv_banner">
+        <div class="adv_data">
+          <div>
+            <div class="banner_heading">Love jobs by Airtel International?</div>
+            <div class="banner_desc">
+              Register with us and let company recruiters find you
+            </div>
+          </div>
+          <div class="adv_button">Register Now</div>
+        </div>
+        <div class="adv_img">
+          <img src="assets/adv_img.png" alt="adv_img" />
+        </div>
+      </div>
+
+      <div class="employee_ratings">
+        <div class="info_heading">More Information</div>
+        <div class="rating">
+          <div class="rating_data">
+            <div class="rating_title">Skill Development</div>
+            <div class="rating_score">
+              <img src="assets/star.png" alt="" />
+              <div class="rating_quant">4.0</div>
+            </div>
+          </div>
+          <div class="scale">
+            <div class="front_scale1"></div>
+            <div class="back_scale"></div>
+          </div>
+        </div>
+
+        <div class="rating">
+          <div class="rating_data">
+            <div class="rating_title">Salary and Benefits</div>
+            <div class="rating_score">
+              <img src="assets/star.png" alt="" />
+              <div class="rating_quant">4.2</div>
+            </div>
+          </div>
+          <div class="scale">
+            <div class="front_scale2"></div>
+            <div class="back_scale"></div>
+          </div>
+
+          <div class="rating">
+            <div class="rating_data">
+              <div class="rating_title">Job Security</div>
+              <div class="rating_score">
+                <img src="assets/star.png" alt="" />
+                <div class="rating_quant">4.8</div>
+              </div>
+            </div>
+            <div class="scale">
+              <div class="front_scale3"></div>
+              <div class="back_scale"></div>
+            </div>
+          </div>
+          <div class="rating">
+            <div class="rating_data">
+              <div class="rating_title">Company Culture</div>
+              <div class="rating_score">
+                <img src="assets/star.png" alt="" />
+                <div class="rating_quant">4.3</div>
+              </div>
+            </div>
+            <div class="scale">
+              <div class="front_scale4"></div>
+              <div class="back_scale"></div>
+            </div>
+          </div>
+          <div class="rating">
+            <div class="rating_data">
+              <div class="rating_title">Work Satisfaction</div>
+              <div class="rating_score">
+                <img src="assets/star.png" alt="" />
+                <div class="rating_quant">3.9</div>
+              </div>
+            </div>
+            <div class="scale">
+              <div class="front_scale5"></div>
+              <div class="back_scale"></div>
+            </div>
+          </div>
+          <div class="rating">
+            <div class="rating_data">
+              <div class="rating_title">Work Life</div>
+              <div class="rating_score">
+                <img src="assets/star.png" alt="" />
+                <div class="rating_quant">4.7</div>
+              </div>
+            </div>
+            <div class="scale">
+              <div class="front_scale6"></div>
+              <div class="back_scale"></div>
+            </div>
+          </div>
+          <div class="rating">
+            <div class="rating_data">
+              <div class="rating_title">Career Growth</div>
+              <div class="rating_score">
+                <img src="assets/star.png" alt="" />
+                <div class="rating_quant">4.5</div>
+              </div>
+            </div>
+            <div class="scale">
+              <div class="front_scale7"></div>
+              <div class="back_scale"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="job_ratings">
+        <div class="info_heading">Reviews by Job Profile</div>
+        <div class="job_rating">
+          <img src="assets/star.png" alt="" />
+          <div class="job_rating_quant">4.4</div>
+          <div class="job_rating_title">Sales Executive</div>
+        </div>
+        <div class="job_rating">
+          <img src="assets/star.png" alt="" />
+          <div class="job_rating_quant">4.2</div>
+          <div class="job_rating_title">Territory Sales Manager</div>
+        </div>
+        <div class="job_rating">
+          <img src="assets/star.png" alt="" />
+          <div class="job_rating_quant">4.1</div>
+          <div class="job_rating_title">Assistant Manager</div>
+        </div>
+        <div class="job_rating">
+          <img src="assets/star.png" alt="" />
+          <div class="job_rating_quant">3.9</div>
+          <div class="job_rating_title">Senior Executive</div>
+        </div>
+      </div>
+
+      <div class="connection">
+        <div class="info_heading">Connect with {{ companyDetails.compName }}</div>
+        <div class="social_media_container">
+          <div class="social_media">
+            <img src="assets/twitter.png" alt="" />
+          </div>
+          <div class="social_media">
+            <img src="assets/instagram.png" alt="" />
+          </div>
+          <div class="social_media">
+            <img src="assets/facebook.png" alt="" />
+          </div>
+          <div class="social_media">
+            <img src="assets/linkedin.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

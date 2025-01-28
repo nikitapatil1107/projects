@@ -1,0 +1,152 @@
+<div class="header_container" style="padding: 1rem 2rem">
+  <div class="logo_anchor_container">
+    <a (click)="onRoutingHome()" style="cursor: pointer">
+      <div class="naukri_logo_container">
+        <img src="assets/naukri_logo.png" alt="" class="logo_img" />
+      </div>
+    </a>
+    <ul class="navbar_ul_list_heading" style="margin-bottom: 0">
+      <li class="navbar_li_list">
+        <a
+          (click)="onRoutingHome()"
+          class="header_anchor_tags nav-link-ltr"
+          [class.active_link]="activeLink === 'home'"
+          style="cursor: pointer"
+          >Home</a
+        >
+      </li>
+      <li class="navbar_li_list">
+        <a
+          [routerLink]="['employee/listOfJobs']"
+          (click)="setActiveLink('jobs')"
+          class="header_anchor_tags nav-link-ltr"
+          [class.active_link]="activeLink === 'jobs'"
+          >Jobs</a
+        >
+      </li>
+      <li class="navbar_li_list">
+        <a
+          (click)="onCompanyClicked()"
+          class="header_anchor_tags nav-link-ltr"
+          style="cursor: pointer"
+          [class.active_link]="activeLink === 'companies'"
+          >Companies</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div>
+    <div *ngIf="isUserLoggedIn" class="profile-dropdown-container">
+      <img
+        src="assets/boy.png"
+        style="width: 40px; height: 40px"
+        alt="Profile"
+        class="profile-icon"
+        id="profileDropdownToggle"
+        [ngClass]="{ 'dropdown-toggle': true, show: isDropdownOpen }"
+        (click)="toggleDropdown()"
+      />
+      <img
+        alt=""
+        src="assets/down-arrow.png"
+        style="width: 30px; height: 30px"
+      />
+      <div
+        class="dropdown-menu profile-dropdown-menu"
+        [ngClass]="{ show: isDropdownOpen }"
+        aria-labelledby="profileDropdownToggle"
+      >
+        <a
+          class="dropdown-item dropdown_item_data"
+          style="padding: 5px 10px; cursor: pointer"
+          (click)="profileRouting()"
+          >View Profile</a
+        >
+        <hr style="padding: 0; margin: 2px 0" />
+        <a
+          class="dropdown-item dropdown_item_data"
+          style="padding: 5px 10px; cursor: pointer"
+          (click)="appliedJobs()"
+          >Applied Jobs</a
+        >
+        <hr style="padding: 0; margin: 2px 0" />
+        <a
+          class="dropdown-item dropdown_item_data"
+          style="padding: 5px 10px; cursor: pointer"
+          (click)="appliedEvents()"
+          >Applied Events</a
+        >
+        <hr style="padding: 0; margin: 2px 0" />
+        <a
+          class="dropdown-item dropdown_item_data"
+          style="padding: 5px 10px; cursor: pointer"
+          (click)="savedEvents()"
+          >Saved Jobs</a
+        >
+        <hr style="padding: 0; margin: 2px 0" />
+        <a
+          class="dropdown-item dropdown_item_data"
+          style="padding: 5px 10px; cursor: pointer"
+          (click)="resetPassword()"
+          >Change Password</a
+        >
+        <hr style="padding: 0; margin: 2px 0" />
+        <a
+          class="dropdown-item dropdown_item_data"
+          style="padding: 5px 10px; cursor: pointer"
+          (click)="logout()"
+          >Logout</a
+        >
+      </div>
+    </div>
+
+    <div
+      *ngIf="!isUserLoggedIn"
+      class="login_reigster_container"
+      style="display: flex; margin: 0 8px"
+    >
+      <button (click)="navigateToLoginPage()" class="login_button">
+        Login
+      </button>
+      <div class="section"></div>
+      <button (click)="navigateToRegisterPage()" class="register_button">
+        Register
+      </button>
+      <div class="profile-dropdown-container">
+        <div
+          id="profileDropdownToggle"
+          [ngClass]="{ show: isDropdownOpen }"
+          (click)="toggleDropdown()"
+          class="employee_dropdown"
+        >
+          <div class="admin_text">For Employee</div>
+          <div style="width: 5px"></div>
+          <img
+            alt=""
+            src="assets/down-arrow.png"
+            style="width: 20px; height: 20px; margin: 3px 0"
+          />
+        </div>
+        <div
+          class="dropdown-menu profile-dropdown-menu"
+          [ngClass]="{ show: isDropdownOpen }"
+          aria-labelledby="profileDropdownToggle"
+        >
+          <a
+            class="dropdown-item dropdown_item_data"
+            style="padding: 5px 10px; cursor: pointer"
+            (click)="employerRegister()"
+            >Employer Register</a
+          >
+          <hr style="padding: 0; margin: 2px 0" />
+          <a
+            class="dropdown-item dropdown_item_data"
+            style="padding: 5px 10px; cursor: pointer"
+            (click)="employerLogin()"
+            >Employer Login</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

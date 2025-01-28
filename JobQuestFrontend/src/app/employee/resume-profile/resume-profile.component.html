@@ -1,0 +1,129 @@
+<div class="containerr">
+  <h1 class="title_heading_tag">Edit Your JobQuest Profile</h1>
+  <div class="tabs_container">
+    <a
+      class="tabs"
+      style="text-decoration: none"
+      aria-label="Overview"
+      data-test="TabGroup-Tab--Overview"
+      (click)="onRoutingOverview()"
+    >
+      OverView
+    </a>
+    <a
+      class="tabs"
+      style="text-decoration: none"
+      aria-label="Overview"
+      data-test="TabGroup-Tab--Overview"
+      (click)="onRoutingProfile()"
+    >
+      Profile
+    </a>
+    <a
+      class="tabs styles_active"
+      style="text-decoration: none"
+      aria-label="Overview"
+      data-test="TabGroup-Tab--Overview"
+      [routerLink]="['employee/resume-profile']"
+    >
+      Resume
+    </a>
+  </div>
+  <div class="styles_content__iN_8o">
+    <div class="styles_fieldset__FcXoW styles-module_row__2K1TX" id="RESUME">
+      <div class="styles_legend__Lq7gl _h_cellSpan_8">
+        <div class="styles_title__Wtms6">Upload your recent resume or CV</div>
+        <div class="styles_hint__CUpHt">Upload your most up-to-date resume</div>
+        <div class="styles_hint__CUpHt">File types: DOC, DOCX, PDF, TXT</div>
+      </div>
+      <div class="styles_fields__aVAVU _h_cellSpan_16">
+        <div class="styles_component__DJvuf">
+          <div>
+            <a
+              (click)="viewResume()"
+              class="styles_component__UCLp3 styles_defaultLink__eZMqw"
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+              >View your resume</a
+            >
+            or upload a new one below
+          </div>
+        </div>
+        <form class="">
+          <div (click)="fileInput.click()" class="styles_uploader__h0R_h">
+            <div
+              data-test="DropzoneField-resume"
+              class="styles_component__7SKhr"
+            >
+              <div
+                class="styles_fileChrome__Jz_qH styles_clickable__OwGt7 flex flex-col items-center justify-center cursor-pointer"
+              >
+                <svg
+                  class="mb-1 text-dark-brand"
+                  fill="none"
+                  height="44"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="44"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+                  <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                  <path d="M5 12v-7a2 2 0 0 1 2 -2h7l5 5v4"></path>
+                  <path d="M5 18h1.5a1.5 1.5 0 0 0 0 -3h-1.5v6"></path>
+                  <path d="M17 18h2"></path>
+                  <path d="M20 15h-3v6"></path>
+                  <path
+                    d="M11 15v6h1a2 2 0 0 0 2 -2v-2a2 2 0 0 0 -2 -2h-1z"
+                  ></path>
+                </svg>
+                <span class="text-sm text-gray-600"
+                  ><button
+                    class="styles_component__7ZpRT font-medium !text-dark-brand"
+                    type="button"
+                  >
+                    Upload new file
+                  </button></span
+                >
+              </div>
+              <input
+                #fileInput
+                accept=".doc,.docx,.pdf,.txt"
+                type="file"
+                style="display: none"
+                (change)="onFileSelected($event)"
+              />
+            </div>
+          </div>
+        </form>
+        <div
+          *ngIf="nameOfSelectedFileName !== ''"
+          class="selected_file_display"
+        >
+          <span (click)="viewResume()" class="selected_file_label">
+            Selected File: &nbsp;&nbsp;&nbsp;&nbsp;<span
+              class="file_name_input_selected"
+              >{{ nameOfSelectedFileName }}</span
+            ></span
+          >
+          <span (click)="clearFile()" style="cursor: pointer"> &#10006; </span>
+        </div>
+        <div class="display_flex">
+          <button
+            *ngIf="isFileSelected"
+            (click)="onUpload()"
+            class="upload_btn"
+          >
+            <div *ngIf="isFileLoading" class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <div *ngIf="!isFileLoading">Upload</div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

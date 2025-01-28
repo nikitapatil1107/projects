@@ -1,0 +1,23 @@
+<div class="register_page_container">
+    <div class="register_page">
+        <div class="register_form_container">
+            <div class="registration_form">
+                <div class="form_heading">Enter Email To send OTP</div>
+                <form class="form" [formGroup]="verifyCredentials" (ngSubmit)="onFormSubmit()">
+                    <div class="form_input_section">
+                        <label for="userEmail">Email Id</label> 
+                        <input class="input_field" id="userEmail" name="userEmail" formControlName="userEmail" type="email" placeholder="Tell us your Email Id"  *ngIf="!otpSent"/>
+                        <input class="input_field" id="userEmail" name="userEmail" formControlName="userEmail" type="email" placeholder="Tell us your Email Id" *ngIf="otpSent"/>
+                    </div>
+                    <div class="form_input_section" *ngIf="otpSent">
+                        <label for="userOTP">Enter OTP</label> 
+                        <input class="input_field" id="userOTP" name="userOTP" formControlName="userOTP" type="number" placeholder="Enter OTP for verification" />
+                    </div>
+                    <div class="submit">
+                        <button class="submit_button" type="submit">{{ otpSent ? "Verify OTP" : "Send OTP" }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

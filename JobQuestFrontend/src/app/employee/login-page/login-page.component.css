@@ -1,0 +1,310 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.register_page_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: "Satoshi", sans-serif;
+  background-color: #f8f9fa;
+}
+
+.register_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 0 5rem;
+}
+
+.register_nav > img {
+  width: 10%;
+}
+
+.nav_desc {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.login_btn {
+  text-decoration: none;
+  color: #275df5;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.register_page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem 5rem;
+  height: 90vh;
+}
+
+.register_desc_container {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 30%;
+}
+
+.register_desc {
+  background-color: white;
+  box-shadow: 0 6px 12px rgba(30, 10, 58, 0.04);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.register_desc > img {
+  width: 50%;
+}
+
+.register_title {
+  font-size: larger;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.register_points {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register_point {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.register_point > img {
+  width: 5%;
+}
+
+.point_data {
+  font-size: smaller;
+  font-weight: 600;
+  color: #474d6a;
+  margin: 0.5rem 1rem;
+}
+
+.register_form_container {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 40%;
+}
+
+.registration_form {
+  background-color: white;
+  box-shadow: 0 6px 12px rgba(30, 10, 58, 0.04);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100;
+}
+
+.form_heading {
+  font-size: 25px;
+  font-weight: 800;
+  width: 100%;
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.form_input_section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input_field {
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid gray;
+  outline-color: #4777fe;
+  color: black;
+  font-weight: bold;
+}
+
+.form_input_section > label {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0.5rem 0.2rem;
+}
+
+::placeholder {
+  color: #979ec2;
+  font-weight: 500;
+}
+
+.terms {
+  font-size: 15px;
+  font-weight: 400;
+  color: #717b9e;
+  text-align: left;
+  width: 100%;
+  margin: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.terms_link {
+  color: #4777fe;
+}
+
+.forget_password {
+  width: 100%;
+  margin: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.forget_password > a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  color: #717b9e;
+}
+
+.submit_button {
+  border: none;
+  padding: 1rem 2rem;
+  background-color: #4777fe;
+  border-radius: 500px;
+  margin: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  width: 90%;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.submit_button:hover {
+  background-color: #b0c8ff;
+}
+
+.error {
+  color: red;
+  font-size: small;
+  margin: 0.5rem;
+}
+
+.error_effect {
+  border: 1px solid red;
+}
+
+.naukri_logo_container {
+  margin: 1.8rem;
+}
+
+.login_banner_img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.login_banner_img > img {
+  width: 60%;
+  height: auto;
+}
+
+.password_input_sec {
+  display: flex;
+  border-radius: 1rem;
+  border: 1px solid gray;
+  width: 100%;
+}
+
+.container {
+  --color: #a5a5b0;
+  --size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--size);
+  user-select: none;
+  fill: var(--color);
+  width: 10%;
+}
+
+.container .eye {
+  position: absolute;
+  animation: keyframes-fill .5s;
+}
+
+.container .eye-slash {
+  position: absolute;
+  animation: keyframes-fill .5s;
+  display: none;
+}
+
+/* ------ On check event ------ */
+.container input:checked ~ .eye {
+  display: none;
+}
+
+.container input:checked ~ .eye-slash {
+  display: block;
+}
+
+/* ------ Hide the default checkbox ------ */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* ------ Animation ------ */
+@keyframes keyframes-fill {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}

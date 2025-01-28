@@ -1,0 +1,448 @@
+<div id="custom-layout">
+  <div class="custom-middle">
+    <div class="custom-middle-sub">
+      <div class="company-name-logo">
+        <div class="company-name">
+          <div class="job-title">{{ jobInfo.jobName }}</div>
+          <p class="company-name">{{ jobInfo.compId.compName }}</p>
+        </div>
+        <img
+          class="company-logo"
+          src="assets/{{ jobInfo.compId.compPosterImg }}"
+          alt=""
+        />
+      </div>
+
+      <div class="Job-basic-details">
+        <img src="assets/suitcase.png" alt="NA" class="location" />
+        <div class="year-exp">
+          <p class="details">
+            &nbsp;&nbsp;{{ jobInfo.expReq }} Years Required&nbsp;
+          </p>
+        </div>
+        <div>|</div>
+        <div class="salary">
+          <p>
+            &nbsp;&nbsp;Rs&nbsp;&nbsp;{{ jobInfo.salRangeMin }} L -
+            {{ jobInfo.salRangeMax }} Salary L&nbsp;&nbsp;
+          </p>
+        </div>
+        <div>|</div>
+        <img src="assets/location.png" alt="NA" class="location" />
+        <div class="location-name">
+          <p>{{ jobInfo.location }}</p>
+        </div>
+      </div>
+      <div class="border"></div>
+      <div class="opening-class">
+        <div class="info-about-job">
+          <div class="posted">Posted:&nbsp;</div>
+          <div>{{ jobInfo.postedAgo }}&nbsp;&nbsp;&nbsp;&nbsp;</div>
+          <div>|</div>
+          <div class="opening">&nbsp;&nbsp;&nbsp;&nbsp;Opening: &nbsp;</div>
+          <div>5&nbsp;&nbsp;&nbsp;&nbsp;</div>
+          <div>|</div>
+          <div class="applicant">&nbsp;&nbsp;&nbsp;&nbsp;Applicant: &nbsp;</div>
+          <div>{{ jobInfo.noOfApplicant }}</div>
+        </div>
+
+        <div class="login-container">
+          <div (click)="onShareJobPage()" class="share_image_div">
+            <img
+              style="width: 30px; height: 30px"
+              src="assets/share.png"
+              alt=""
+            />
+          </div>
+          <ng-container *ngIf="userLoggedIn; else loginLink">
+            <ng-container *ngIf="alreadyApplied; else applyButton">
+              <a (click)="removeAppliedJob()" style="text-decoration: none">
+                <button
+                  class="button-17"
+                  id="Login-to-apply"
+                  role="button"
+                  type="button"
+                >
+                  Applied
+                </button>
+              </a>
+            </ng-container>
+            <ng-template #applyButton>
+              <a
+                (click)="
+                  applyJob(
+                    jobInfo.jobId,
+                    jobInfo.compId.compId!,
+                    jobInfo.jobName
+                  )
+                "
+                style="text-decoration: none"
+              >
+                <button
+                  class="button-17"
+                  id="Login-to-apply"
+                  role="button"
+                  type="button"
+                >
+                  Apply
+                </button>
+              </a>
+            </ng-template>
+          </ng-container>
+          <ng-template #loginLink>
+            <a [routerLink]="'/employee/login'" style="text-decoration: none">
+              <button
+                class="button-17"
+                id="Login-to-apply"
+                role="button"
+                type="button"
+              >
+                Login to apply
+              </button>
+            </a>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+
+    <div class="custom-middle-sub">
+      <h5 class="Job-description">Job description</h5>
+      <div class="hr-email">
+        {{ jobInfo.jobDesc }}
+      </div>
+      <br />
+      <h5 class="required-candidate-profile">Required Candidate profile</h5>
+      <div class="required-candidate-profile-details">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
+        aliquam vel cupiditate ratione aperiam dolores amet nobis iure unde
+        impedit laboriosam consequuntur, nulla nesciunt nihil mollitia error.
+        Tenetur, officia quaerat.
+      </div>
+      <br />
+      <div class="about-role">
+        <h5 class="role">Role:&nbsp;</h5>
+        <div class="role-details">{{ jobInfo.role }}</div>
+      </div>
+      <br />
+      <div class="about-industry">
+        <h5 class="Industry">Industry-type:&nbsp;</h5>
+        <div class="Industry-details">{{ jobInfo.industryType }}</div>
+      </div>
+      <br />
+      <div class="about-department">
+        <h5 class="department">Department:&nbsp;</h5>
+        <div class="department-details">{{ jobInfo.department }}</div>
+      </div>
+      <br />
+      <div class="about-Employment">
+        <h5 class="employment">Employment Type:&nbsp;</h5>
+        <div class="employment-details">{{ jobInfo.empType }}</div>
+      </div>
+      <br />
+      <div class="about-role-category">
+        <h5 class="role-category">Role-Category:&nbsp;</h5>
+        <div class="role-category-details">{{ jobInfo.roleCategory }}</div>
+      </div>
+      <br />
+      <h5 class="education">Education:</h5>
+      <div class="about-UG">
+        <h5 class="UG">UG:&nbsp;</h5>
+        <div class="UG-details">{{ jobInfo.education }}</div>
+      </div>
+      <br />
+      <h5 class="key-skills">Key skills:</h5>
+      <div class="about-key-skills">
+        <div class="key-skills-details">
+          Skill Highlighted with * are preferred keyskills
+        </div>
+      </div>
+      <br />
+      <ng-container *ngIf="jobInfo && jobInfo.keySkills">
+        <div class="key-skills-container">
+          <button
+            *ngFor="let skill of jobInfo.keySkills.split(',')"
+            class="Infrastructure"
+            id="Infrastructure"
+            role="button"
+          >
+            <div>{{ skill }}</div>
+          </button>
+        </div>
+      </ng-container>
+
+      <br />
+      <div class="border"></div>
+      <br />
+      <div class="social-media-container">
+        <img src="assets/facebook.png" alt="NA" class="social-media" />
+        <img src="assets/twitter.png" alt="NA" class="social-media" />
+        <img src="assets/linkedin.png" alt="NA" class="social-media" />
+      </div>
+    </div>
+    <div class="custom-middle-sub">
+      <div>
+        <h5 class="about-company">About company:&nbsp;</h5>
+        <div class="about-company-details">{{ jobInfo.compId.compName }}</div>
+      </div>
+      <br />
+      <h5 class="required-candidate-profile">Company Info</h5>
+      <div class="required-candidate-profile-details">
+        {{ jobInfo.compId.compDesc }}
+      </div>
+      <br />
+      <div class="about-role-category">
+        <h5 class="role-category">Company Type:&nbsp;</h5>
+        <div class="role-category-details">{{ jobInfo.compId.compType }}</div>
+      </div>
+      <br />
+      <div class="about-role-category">
+        <h5 class="role-category">Founded At:&nbsp;</h5>
+        <div class="role-category-details">{{ jobInfo.compId.foundedAt }}</div>
+      </div>
+      <br />
+      <div class="about-role-category">
+        <h5 class="role-category">Headquarters:&nbsp;</h5>
+        <div class="role-category-details">
+          {{ jobInfo.compId.compHeadquaters }}
+        </div>
+      </div>
+      <br />
+      <button
+        class="button-17"
+        id="Login-to-apply"
+        role="button"
+        type="button"
+        (click)="viewCompanyDetails()"
+      >
+        View Details
+      </button>
+      <br />
+    </div>
+    <div class="custom-middle-sub">
+      <div>
+        <h5 class="imposter">Beaware of imposter:&nbsp;</h5>
+        <div class="imposter-details">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos
+          optio, cupiditate fuga eveniet Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Dolores ut facere error inventore. Veritatis
+          accusantium, quaerat esse, facere numquam assumenda vero commodi ab
+          nihil ut sint! Consequuntur accusamus saepe hic?
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+
+  <div class="custom-right">
+    <div
+      class="custom-right-sub"
+      id="custom-right-sub"
+      style="
+        border: 1px solid #e7e7f1;
+        border-radius: 10px;
+        padding: 1rem 1.5rem;
+      "
+    >
+      <h4 class="right-main-heading">Jobs you might be intrested in</h4>
+      
+      
+      <br />
+      <div class="all-about-intrested-job">
+        <div class="company-name-job-name">
+          <h5 class="job-name-of-intrested-job">
+            Software Development Engineer:&nbsp;
+          </h5>
+          <h5 class="company-name-of-intrested-comp">Facebook</h5>
+          <div class="Job-basic-details">
+            <div class="rating">
+              <label></label>
+            </div>
+            <h6 class="Review">4.5 | 8766 Review</h6>
+          </div>
+        </div>
+        <div class="intrested-job-logo-div">
+          <img src="assets/facebook.png" alt="" class="intrested-job-logo" />
+        </div>
+      </div>
+      <div class="location-instrested-job">
+        <img src="assets/location.png" alt="NA" class="location-ins" />
+        <div class="location-name">Temp. WFH - Mumbai</div>
+      </div>
+      <br />
+      <div class="right_border"></div>
+      <div class="all-about-intrested-job">
+        <div class="company-name-job-name">
+          <h5 class="job-name-of-intrested-job">
+            Business Development Executive:&nbsp;
+          </h5>
+          <h5 class="company-name-of-intrested-comp">Netflix</h5>
+          <div class="Job-basic-details">
+            <div class="rating">
+              <label></label>
+            </div>
+            <h6 class="Review">4.0 | 7834 Review</h6>
+          </div>
+        </div>
+        <div class="intrested-job-logo-div">
+          <img src="assets/netflix.png" alt="" class="intrested-job-logo" />
+        </div>
+      </div>
+      <div class="location-instrested-job">
+        <img src="assets/location.png" alt="NA" class="location-ins" />
+        <div class="location-name">Temp. WFH - Mumbai</div>
+      </div>
+      <br />
+
+      <div class="right_border"></div>
+      <br />
+      <div class="all-about-intrested-job">
+        <div class="company-name-job-name">
+          <h5 class="job-name-of-intrested-job">
+            Product Analyst:&nbsp;
+          </h5>
+          <h5 class="company-name-of-intrested-comp">LinkedIn</h5>
+          <div class="Job-basic-details">
+            <div class="rating">
+              <label></label>
+            </div>
+            <h6 class="Review">3.9 | 3455 Review</h6>
+          </div>
+        </div>
+        <div class="intrested-job-logo-div">
+          <img src="assets/linkedin.png" alt="" class="intrested-job-logo" />
+        </div>
+      </div>
+      <div class="location-instrested-job">
+        <img src="assets/location.png" alt="NA" class="location-ins" />
+        <div class="location-name">Temp. WFH - Mumbai</div>
+      </div>
+      <br />
+      <div class="right_border"></div>
+      <br />
+      <div class="view-all">
+        <button class="Infrastructure" role="button">View all</button>
+      </div>
+      <br />
+    </div>
+
+    <div
+      class="custom-right-sub"
+      style="
+        border: 1px solid #e7e7f1;
+        border-radius: 10px;
+        padding: 1rem 1.5rem;
+      "
+    >
+      <div class="full-review-container">
+        <div class="review-and-read-all-view">
+          <h4 class="right-container-headings">Reviews</h4>
+          <a class="read-all-review" href="#">Read all 34524 reviews</a>
+        </div>
+        <h5 class="job-name-of-intrested-job">
+          Business Development Executive:&nbsp;
+        </h5>
+        <div>
+          <p class="review-by-and-time">Anonymous | 04 Feb 2023</p>
+        </div>
+        <div class="rating">
+          <input type="radio" id="star5" name="rating" value="5" /><label
+            for="star5"
+          ></label>
+          <input type="radio" id="star4" name="rating" value="4" /><label
+            for="star4"
+          ></label>
+          <input type="radio" id="star3" name="rating" value="3" /><label
+            for="star3"
+          ></label>
+          <input type="radio" id="star2" name="rating" value="2" /><label
+            for="star2"
+          ></label>
+          <input type="radio" id="star1" name="rating" value="1" /><label
+            for="star1"
+          ></label>
+        </div>
+        <h5 class="Likes-of-intrested-job">Likes</h5>
+        <div class="comment">
+          it's a good to start as a fresher. You can ask doubt to senior members
+          if you're struggling
+        </div>
+      </div>
+    </div>
+    <div
+      class="custom-right-sub"
+      style="
+        border: 1px solid #e7e7f1;
+        border-radius: 10px;
+        padding: 1rem 1.5rem;
+      "
+    >
+      <div class="review-and-read-all-view">
+        <h4 class="right-container-headings">Benefit & Perks</h4>
+        <a class="read-all-review" href="#">Read all 34524 reviews</a>
+      </div>
+      <p class="reported-benefit">3 User reported these benefit</p>
+      <br />
+      <div class="all-benefit">
+        <div class="continer-of-benefit">
+          <div class="single-benefit">
+            <img src="assets/home.png" alt="NA" class="img-of-benefit" />
+            <div class="benefit-name">Work from home</div>
+          </div>
+          <div class="single-benefit">
+            <img src="assets/group.png" alt="NA" class="img-of-benefit" />
+            <div class="benefit-name">Soft Skill Training</div>
+          </div>
+          <div class="single-benefit">
+            <img
+              src="assets/online-training.png"
+              alt=""
+              class="img-of-benefit"
+            />
+            <div class="benefit-name">Job Training</div>
+          </div>
+        </div>
+        <div class="continer-of-benefit">
+          <div class="single-benefit">
+            <img src="assets/beach-chair.png" alt="NA" class="img-of-benefit" />
+            <div class="benefit-name">Team Outing</div>
+          </div>
+          <div class="single-benefit">
+            <img src="assets/car.png" alt="NA" class="img-of-benefit" />
+            <div class="benefit-name">Transport</div>
+          </div>
+          <div class="single-benefit">
+            <img src="assets/diner.png" alt="NA" class="img-of-benefit" />
+            <div class="benefit-name">Fresh Food</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="custom-right-sub"
+      style="
+        border: 1px solid #e7e7f1;
+        border-radius: 10px;
+        padding: 1rem 1.5rem;
+      "
+    >
+      <div class="review-and-read-all-view">
+        <h4 class="right-container-headings">Service you might be intrested</h4>
+        <a class="read-all-review" href="#">Know more</a>
+      </div>
+      <p class="service-name">Resume Display</p>
+      <h5 class="service-desc">
+        Increase your profile visiblity to recurite upto 3 times
+      </h5>
+      <h5 class="service-desc-more">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum,
+        suscipit laboriosam id eius distinctio esse! Nisi
+      </h5>
+      <br />
+      <div class="border"></div>
+      <br />
+      &nbsp;
+      <img src="assets/Random.jfif" alt="" class="service-intrested-provider" />
+      <br />
+    </div>
+  </div>
+</div>

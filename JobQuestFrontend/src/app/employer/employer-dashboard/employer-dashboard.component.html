@@ -1,0 +1,366 @@
+<app-employer-header></app-employer-header>
+<div class="dashboard_container">
+  <div class="dashboard_card">
+    <div class="company_data_container">
+      <div class="company_data">
+        <div class="company_logo">
+          <img
+            *ngIf="companyProfileData.compPosterImg === ''"
+            src="assets/adv_img.png"
+            alt="company_logo"
+          />
+          <img
+            *ngIf="companyProfileData.compPosterImg !== ''"
+            [src]="'assets/' + companyProfileData.compPosterImg"
+            alt="company_logo"
+          />
+        </div>
+        <div class="company_desc">
+          <div class="company_name">{{ companyProfileData.compName }}</div>
+          <div class="company_contact_name">
+            {{ companyProfileData.compContactName }}
+          </div>
+          <div class="company_contact">
+            <img src="assets/phone.png" alt="contact_logo" />
+            <div class="contact">{{ companyProfileData.compContactNo }}</div>
+          </div>
+          <div class="company_email">
+            <img src="assets/email.png" alt="mail_logo" />
+            <div class="mail">{{ companyProfileData.compEmail }}</div>
+          </div>
+          <div class="company_description">
+            <div class="desc_heading">Description</div>
+            <div *ngIf="companyProfileData.compDesc === ''" class="desc">
+              No Description has been added for your company. We suggest you add
+              description about your company to attract more people
+            </div>
+            <div *ngIf="companyProfileData.compDesc !== ''" class="desc">
+              {{ companyProfileData.compDesc }}
+            </div>
+          </div>
+
+          <div class="company_tags_info_inside">
+            <div class="company_tags_container_inside">
+              <div class="tag_heading">Type</div>
+              <div class="company_tags">
+                <div class="company_tag">{{ companyProfileData.tag1 }}</div>
+                <div class="company_tag">{{ companyProfileData.tag2 }}</div>
+                <div class="company_tag">{{ companyProfileData.tag3 }}</div>
+                <div class="company_tag">{{ companyProfileData.tag4 }}</div>
+              </div>
+              <div class=""></div>
+            </div>
+            <div class="company_sub_info_inside">
+              <div class="sub_info">
+                <div class="sub_info_data1">
+                  <div class="sub_key">Founded At :</div>
+                  <div
+                    *ngIf="companyProfileData.foundedAt === ''"
+                    class="sub_value"
+                  >
+                    Unknown
+                  </div>
+                  <div
+                    *ngIf="companyProfileData.foundedAt !== ''"
+                    class="sub_value"
+                  >
+                    {{ companyProfileData.foundedAt }}
+                  </div>
+                </div>
+                <div class="sub_info_data2">
+                  <div class="sub_key">Headquarters :</div>
+                  <div
+                    *ngIf="companyProfileData.compHeadquaters === ''"
+                    class="sub_value"
+                  >
+                    Unknown
+                  </div>
+                  <div
+                    *ngIf="companyProfileData.compHeadquaters !== ''"
+                    class="sub_value"
+                  >
+                    {{ companyProfileData.compHeadquaters }}
+                  </div>
+                </div>
+              </div>
+              <div class="sub_desc_info">
+                <div class="desc_info">
+                  <div class="sub_key">Tagline :</div>
+                  <div
+                    *ngIf="companyProfileData.compTagLine === ''"
+                    class="sub_value"
+                  >
+                    No Tagline is Given
+                  </div>
+                  <div
+                    *ngIf="companyProfileData.compTagLine !== ''"
+                    class="sub_value"
+                  >
+                    {{ companyProfileData.compTagLine }}
+                  </div>
+                </div>
+                <div class="desc_link">
+                  <div class="sub_key">Website Url :</div>
+                  <div
+                    *ngIf="companyProfileData.compWebsiteUrl === ''"
+                    class="sub_value"
+                  >
+                    No Website Url of Company
+                  </div>
+                  <div
+                    *ngIf="companyProfileData.compWebsiteUrl !== ''"
+                    class="sub_value"
+                  >
+                    {{ companyProfileData.compWebsiteUrl }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section_divider"></div>
+        <div class="company_tags_info">
+          <div class="company_tags_container">
+            <div class="tag_heading">Type</div>
+            <div class="company_tags">
+              <div class="company_tag">{{ companyProfileData.tag1 }}</div>
+              <div class="company_tag">{{ companyProfileData.tag2 }}</div>
+              <div class="company_tag">{{ companyProfileData.tag3 }}</div>
+              <div class="company_tag">{{ companyProfileData.tag4 }}</div>
+            </div>
+            <div class=""></div>
+          </div>
+          <div class="company_sub_info">
+            <div class="sub_info">
+              <div style="margin-right: 5rem">
+                <div class="sub_key">Founded At :</div>
+                <div
+                  *ngIf="companyProfileData.foundedAt === ''"
+                  class="sub_value"
+                >
+                  Unknown
+                </div>
+                <div
+                  *ngIf="companyProfileData.foundedAt !== ''"
+                  class="sub_value"
+                >
+                  {{ companyProfileData.foundedAt }}
+                </div>
+              </div>
+              <div>
+                <div class="sub_key">Headquarters :</div>
+                <div
+                  *ngIf="companyProfileData.compHeadquaters === ''"
+                  class="sub_value"
+                >
+                  Unknown
+                </div>
+                <div
+                  *ngIf="companyProfileData.compHeadquaters !== ''"
+                  class="sub_value"
+                >
+                  {{ companyProfileData.compHeadquaters }}
+                </div>
+              </div>
+            </div>
+            <div class="sub_desc_info">
+              <div class="desc_info">
+                <div class="sub_key">Tagline :</div>
+                <div
+                  *ngIf="companyProfileData.compTagLine === ''"
+                  class="sub_value"
+                >
+                  No Tagline is Given
+                </div>
+                <div
+                  *ngIf="companyProfileData.compTagLine !== ''"
+                  class="sub_value"
+                >
+                  {{ companyProfileData.compTagLine }}
+                </div>
+              </div>
+              <div class="desc_link">
+                <div class="sub_key">Website Url :</div>
+                <div
+                  *ngIf="companyProfileData.compWebsiteUrl === ''"
+                  class="sub_value"
+                >
+                  No Website Url of Company
+                </div>
+                <div
+                  *ngIf="companyProfileData.compWebsiteUrl !== ''"
+                  class="sub_value"
+                >
+                  {{ companyProfileData.compWebsiteUrl }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <button
+          class="edit_company_button"
+          id="edit_company"
+          role="button"
+          type="button"
+          (click)="onEditCompanyDetailRouting()"
+        >
+          Edit Details
+        </button>
+        <button
+          class="edit_company_button"
+          id="edit_company"
+          role="button"
+          type="button"
+          (click)="onAddJobsForCompanyRouting()"
+        >
+          + Add Jobs
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="jobs_card">
+    <a style="text-decoration: none" *ngFor="let job of allJobsOfCompany">
+      <div class="Jobs" [ngClass]="{ inactive: !job.jobActive }">
+        <div class="Job-and-company-image-and-name">
+          <div class="Job-and-company-name">
+            <div class="Job-name">{{ job.jobName }}</div>
+            <div class="Job-basic-details">
+              <div class="comp_name">{{ job.compId.compName }}</div>
+
+              <div class="rating" style="margin: 0.5rem">
+                <label></label>
+              </div>
+              <div class="comp_name" class="Review">
+                {{ job.compId.compRating }} &nbsp;&nbsp;&nbsp; |
+                &nbsp;&nbsp;&nbsp; 3353 Review
+              </div>
+            </div>
+
+            <div class="job_basic_details_hidden">
+              <div class="comp_name">{{ job.compId.compName }}</div>
+            </div>
+          </div>
+          <div class="images-of-company-in-job-list">
+            <img
+              class="comp_name"
+              class="images-in-job-list"
+              alt="NA"
+              [src]="'assets/' + job.compId.compPosterImg"
+            />
+          </div>
+        </div>
+        <div class="Job-details">
+          <img src="assets/suitcase.png" alt="NA" class="location" />
+          <div class="year-exp">
+            <div class="text_info_more">{{ job.expReq }} Years Required</div>
+          </div>
+          <div>
+            <div>|</div>
+          </div>
+          <div class="salary">
+            <div class="text_info_more">
+              Rs {{ job.salRangeMin }} L - {{ job.salRangeMax }} L Salary
+            </div>
+          </div>
+          <div class="details">
+            <div>|</div>
+          </div>
+          <div class="details">
+            <img src="assets/location.png" alt="NA" class="location" />
+          </div>
+          <div class="text_info_more location-name">
+            {{ job.location.substring(0, 19) }}..
+          </div>
+        </div>
+
+        <div class="job_details_hidden">
+          <div class="details_point">
+            <img src="assets/suitcase.png" alt="NA" class="location" />
+            <div class="text_info_hidden">{{ job.expReq }} Years Required</div>
+          </div>
+          <div class="details_point">
+            <div class="text_info_hidden">
+              Rs {{ job.salRangeMin }} L - {{ job.salRangeMax }} L Salary
+            </div>
+          </div>
+          <div class="details_point">
+            <img src="assets/location.png" alt="NA" class="location" />
+            <div class="text_info_hidden">
+              {{ job.location.substring(0, 19) }}..
+            </div>
+          </div>
+        </div>
+
+        <div class="short-job-desc">
+          <img src="assets/page.png" alt="NA" class="location" />
+          <div class="job-desc details">
+            {{ job.jobDesc.substring(0, 190) }}...
+          </div>
+        </div>
+        <div class="job_tags">
+          <div
+            *ngFor="let tag of job.keySkills.split(',').slice(0, 4)"
+            class="details tags"
+            style="margin: 8px 0 0 0"
+          >
+            <div class="Job-tag">{{ tag }}</div>
+            <div>
+              <div>|</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="job_tags_hidden">
+          <div
+            *ngFor="let tag of job.keySkills.split(',').slice(0, 4)"
+            class="job_tag"
+          >
+            <div class="tag_data">- {{ tag }}</div>
+          </div>
+        </div>
+        <div class="display_flex">
+          <div class="toggle-container">
+            <label class="toggle-label">{{
+              job.jobActive ? "Active" : "Inactive"
+            }}</label>
+            <label class="switch">
+              <input
+                type="checkbox"
+                [checked]="job.jobActive"
+                (change)="toggleJobIsActiveStatus(job)"
+              />
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="display_flex02">
+            <div class="button" style="margin-right: 7px">
+              <button
+                class="edit_job_button"
+                id="edit_job"
+                role="button"
+                type="button"
+                style="background-color: #d33"
+                (click)="onJobDelete(job)"
+              >
+                Delete Job
+              </button>
+            </div>
+            <div class="button">
+              <button
+                class="edit_job_button"
+                id="edit_job"
+                role="button"
+                type="button"
+                (click)="onJobEditRouting(job.jobId)"
+              >
+                Edit Details
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

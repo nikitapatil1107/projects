@@ -1,0 +1,750 @@
+<div class="containerr">
+  <h1 class="title_heading_tag">Edit Your JobQuest Profile</h1>
+  <div class="tabs_container">
+    <a
+      class="tabs tabs_first"
+      style="text-decoration: none"
+      aria-label="Overview"
+      data-test="TabGroup-Tab--Overview"
+      (click)="onRoutingOverview()"
+    >
+      OverView
+    </a>
+    <a
+      class="tabs styles_active"
+      style="text-decoration: none"
+      aria-label="Overview"
+      data-test="TabGroup-Tab--Overview"
+      [routerLink]="['employee/userProfile']"
+    >
+      Profile
+    </a>
+    <a
+      class="tabs"
+      style="text-decoration: none"
+      aria-label="Overview"
+      data-test="TabGroup-Tab--Overview"
+      (click)="onRoutingResume()"
+    >
+      Resume
+    </a>
+  </div>
+  <div class="profile_body_container">
+    <div class="about_container">
+      <div class="tell_about_yourself_data">
+        <div
+          class="about_text"
+          style="font-size: 16px; line-height: 20px; font-weight: 600"
+        >
+          About
+        </div>
+        <div class="about_text_subtitle">
+          Tell us about yourself so companies know who you are
+        </div>
+      </div>
+      <div class="about_yourself_form_container">
+        <form
+          [formGroup]="userProfileFormData"
+          (ngSubmit)="addBasicInfoOfUser()"
+          class="about_yourself_form"
+        >
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Your Name&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="user_name"
+            placeholder="Enter you name here"
+            formControlName="userName"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Your Email&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="user_email"
+            placeholder="Enter you email here"
+            [disabled]="isDisabled"
+            readonly="readonly"
+            formControlName="userEmail"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Your Contact Number&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="number"
+            class="user_info_input"
+            name="user_contact"
+            placeholder="Enter you contact number here"
+            formControlName="userContactNo"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Where are you based?&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="based_on"
+            placeholder="Tell us where are you based on"
+            formControlName="userLocation"
+          />
+          <div class="little_spaced_container"></div>
+          <div class="role_and_years_container">
+            <div class="col-6 col-md-4">
+              <div
+                for=""
+                class="user_info_label"
+                style="font-size: 14px; line-height: 24px; font-weight: 600"
+              >
+                Select your Primary Role&nbsp;&nbsp;<span class="asterik_color"
+                  >*</span
+                >
+              </div>
+
+              <select
+                class="selectpicker styled-select"
+                data-style="btn-info"
+                style="width: 450px"
+                name="primary_role"
+                formControlName="primaryRole"
+              >
+                <option value="" class="selection_text">
+                  Select primary role
+                </option>
+                <option value="Flutter">Flutter</option>
+                <option value="Java">Java</option>
+                <option value="Spring">Spring</option>
+                <option value="Springboot">Spring Boot</option>
+                <option value="Python">Python</option>
+                <option value="AI">AI</option>
+                <option value="ML">ML</option>
+                <option value="React">React</option>
+                <option value="Angular">Angular</option>
+              </select>
+            </div>
+            <div>
+              <div
+                for=""
+                class="user_info_label"
+                style="font-size: 14px; line-height: 24px; font-weight: 600"
+              >
+                Years of Experience&nbsp;&nbsp;<span class="asterik_color"
+                  >*</span
+                >
+              </div>
+
+              <div class="styled-selec years_experience">
+                <select
+                  name="years_exp"
+                  formControlName="yearsOfExpInPrimaryRole"
+                >
+                  <option
+                    value=""
+                    class="selection_text"
+                    style="color: #656363; font-size: 13px"
+                    selected
+                    disabled
+                  >
+                    Tell us Years of Experience
+                  </option>
+                  <option value="1" class="options">1 Year</option>
+                  <option value="2" class="options">2 Years</option>
+                  <option value="3" class="options">3 Years</option>
+                  <option value="4" class="options">4 Years</option>
+                  <option value="5" class="options">5 Years</option>
+                  <option value="6" class="options">6 Years</option>
+                  <option value="7" class="options">7 Years</option>
+                  <option value="8" class="options">8 Years</option>
+                  <option value="9" class="options">9 Years</option>
+                  <option value="10" class="options">10+ Years</option>
+                  <!-- Add more options as needed -->
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Open to Following Role
+          </div>
+          <div class="list_selected" id="selectedSkills">
+            <div
+              class="selectedSkill"
+              data-skill="${skill}"
+              *ngFor="let skill of skillsOfFollowingRolesList"
+            >
+              <span>{{ skill }}</span>
+              <button
+                class="remove_selected_skill_button"
+                (click)="removeSkillOfFollowingRoles(skill)"
+              >
+                x
+              </button>
+            </div>
+          </div>
+          <select
+            id="skillsDropdown"
+            class="styled-select"
+            (change)="addSkillOfFollowingRoles($event)"
+          >
+            <option value="" style="color: #656363; font-size: 13px">
+              Select a Skill
+            </option>
+            <option value="C++">C++</option>
+            <option value="Android Development">Android Development</option>
+            <option value="Flutter">Flutter</option>
+            <option value="React">React</option>
+            <option value="Java">Java</option>
+            <option value="Spring">Spring</option>
+            <option value="Python">Python</option>
+            <option value="Spring-boot">Spring-boot</option>
+          </select>
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Your Bio
+          </div>
+          <textarea
+            name="bio"
+            id=""
+            cols="70"
+            rows="7"
+            class="text-md"
+            placeholder="Enter your Bio Here"
+            formControlName="userBio"
+          ></textarea>
+          <div class="little_spaced_container"></div>
+          <div class="button_container">
+            <button class="cancel_button">Cancel</button>
+            <button class="save_work_button">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="little_spaced_container"></div>
+    <div class="horizontal_line_heading"></div>
+    <div class="about_container">
+      <div class="tell_about_yourself_data">
+        <div
+          class="about_text"
+          style="font-size: 16px; line-height: 20px; font-weight: 600"
+        >
+          Social Profiles
+        </div>
+        <div class="about_text_subtitle">Where can People find you online</div>
+      </div>
+      <div class="about_yourself_form_container">
+        <form
+          [formGroup]="userProfileFormData"
+          (ngSubmit)="addSocialProfileOfUser()"
+          class="about_yourself_form"
+        >
+          <div class="logo_name_container">
+            <img src="assets/globe-grid.png" alt="" class="tags_img small" />
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Website
+            </div>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="website_name"
+            placeholder="Enter your website url"
+            formControlName="websiteUrl"
+          />
+          <div class="little_spaced_container"></div>
+          <div class="logo_name_container">
+            <img
+              src="assets/linkedin-blogo.png"
+              alt=""
+              class="tags_img small"
+            />
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              LinkedIn
+            </div>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="linkedin"
+            placeholder="Enter your LinkedIn Profile Url"
+            formControlName="linkedInUrl"
+          />
+          <div class="little_spaced_container"></div>
+          <div class="logo_name_container">
+            <img src="assets/github.png" alt="" class="tags_img small" />
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Github
+            </div>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="github"
+            placeholder="Enter your Github Profile Url"
+            formControlName="githubUrl"
+          />
+          <div class="little_spaced_container"></div>
+          <div class="logo_name_container">
+            <img src="assets/twitter_b.png" alt="" class="tags_img small" />
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Twitter
+            </div>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="twitter"
+            placeholder="Enter your Twitter Profile Url"
+            formControlName="twitterUrl"
+          />
+          <div class="little_spaced_container"></div>
+          <div class="button_container">
+            <button class="cancel_button" type="reset">Cancel</button>
+            <button class="save_work_button">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="little_spaced_container"></div>
+    <div class="horizontal_line_heading"></div>
+    <div class="about_container">
+      <div class="tell_about_yourself_data">
+        <div
+          class="about_text"
+          style="font-size: 16px; line-height: 20px; font-weight: 600"
+        >
+          Your Work Experience
+        </div>
+        <div class="about_text_subtitle">
+          What other position have you held?
+        </div>
+      </div>
+      <div class="about_yourself_form_container extra_adding_container">
+        <div *ngIf="userProfileData.workExpList.length !== 0">
+          <div
+            *ngFor="let userW of userProfileData.workExpList"
+            class="work_experience_container"
+          >
+            <div class="logo_container_div">
+              <img src="assets/worker.png" alt="" class="logo_image_job" />
+            </div>
+            <div class="detail_company_container">
+              <div class="display_flex">
+                <div class="job_title_text">{{ userW.titleName }}</div>
+                <img
+                  src="assets/delete.png"
+                  alt=""
+                  class="tags_img"
+                  style="cursor: pointer"
+                  (click)="deleteWorkExperience(userW.workExpId)"
+                />
+              </div>
+              <div class="company_title_text">{{ userW.companyName }}</div>
+              <div class="period_of_job_text">
+                {{ userW.startDate }} to {{ userW.endDate }}
+              </div>
+
+              <div class="job_description_text">
+                {{ userW.workDescription }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          *ngIf="
+            userProfileData.workExpList.length === 0 || workExpAddedClicked
+          "
+        >
+          <form
+            [formGroup]="userWorkExpFormData"
+            (ngSubmit)="addWorkExperience()"
+            id="work_exp_form"
+            class="about_yourself_form"
+            style="display: 'block'"
+          >
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Company Name&nbsp;<span class="asterik_color">*</span>
+            </div>
+            <input
+              type="text"
+              class="user_info_input"
+              name="company_name"
+              placeholder="Enter your Company Name"
+              formControlName="companyName"
+            />
+            <div class="little_spaced_container"></div>
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Title&nbsp;<span class="asterik_color">*</span>
+            </div>
+            <input
+              type="text"
+              class="user_info_input"
+              name="title_name"
+              placeholder="Enter your Title Name"
+              formControlName="titleName"
+            />
+            <div class="little_spaced_container"></div>
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Start Date&nbsp;<span class="asterik_color">*</span>
+            </div>
+            <input
+              type="date"
+              class="user_info_input"
+              name="start_date"
+              placeholder="Starting Date"
+              formControlName="startDate"
+              [max]="todayDate"
+              (change)="updateEndDateMinDate()"
+            />
+            <div class="little_spaced_container"></div>
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              End Date&nbsp;<span class="asterik_color">*</span>
+            </div>
+            <input
+              type="date"
+              class="user_info_input"
+              name="end_date"
+              placeholder="End Date"
+              formControlName="endDate"
+              [min]="userWorkExpFormData.get('startDate')!.value"
+              [max]="todayDate"
+            />
+            <div class="little_spaced_container"></div>
+            <div class="checkbox_text_container">
+              <input type="checkbox" name="work_checkbox" />
+              <div class="work_here_text">I currently work here</div>
+            </div>
+            <div class="little_spaced_container"></div>
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Description&nbsp;<span class="asterik_color">*</span>
+            </div>
+            <textarea
+              name="job_description"
+              id=""
+              cols="70"
+              rows="7"
+              placeholder="Tell us what you did in this job"
+              class="text-md"
+              formControlName="workDescription"
+            ></textarea>
+            <div class="little_spaced_container"></div>
+            <div class="button_container">
+              <button
+                class="cancel_button"
+                type="button"
+                (click)="cancelButtonFunctionOfWorkExp()"
+              >
+                Cancel
+              </button>
+              <button class="save_work_button">Save</button>
+            </div>
+          </form>
+        </div>
+        <button
+          *ngIf="
+            userProfileData.workExpList.length !== 0 && !workExpAddedClicked
+          "
+          class="add_work_exp_button"
+          id="add_work_exp_button_id"
+          (click)="addMoreWorkExperienceBoolean()"
+          style="
+            border: none;
+            border-bottom: 1px solid #275df5;
+            color: #275df5;
+            background-color: transparent;
+            font-size: 13px;
+            display: 'block';
+          "
+        >
+          + Add Work Experience
+        </button>
+      </div>
+    </div>
+    <div class="little_spaced_container"></div>
+    <div class="horizontal_line_heading"></div>
+    <div class="about_container">
+      <div class="tell_about_yourself_data">
+        <div
+          class="about_text"
+          style="font-size: 16px; line-height: 20px; font-weight: 600"
+        >
+          Education
+        </div>
+        <div class="about_text_subtitle">What schools have you studied at?</div>
+      </div>
+      <div class="about_yourself_form_container extra_adding_container">
+        <div *ngIf="userProfileData.userEducationList.length !== 0">
+          <div
+            *ngFor="let userEdu of userProfileData.userEducationList"
+            class="work_experience_container padding_container"
+          >
+            <div class="logo_container_div">
+              <img
+                src="assets/graduation-hat.png"
+                alt=""
+                class="logo_image_job"
+              />
+            </div>
+            <div class="detail_company_container">
+              <div class="display_flex">
+                <div class="job_title_text">{{ userEdu.collegeName }}</div>
+                <img
+                  src="assets/delete.png"
+                  alt=""
+                  class="tags_img"
+                  style="cursor: pointer"
+                  (click)="deleteUserEducation(userEdu.userEduId)"
+                />
+              </div>
+              <div class="period_of_job_text">{{ userEdu.degreeMajor }}</div>
+              <div class="period_of_job_text">
+                Graduation Year: {{ userEdu.graduationYear }}
+              </div>
+              <div class="period_of_job_text">
+                GPA Score: {{ userEdu.gpaScore }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          *ngIf="
+            userProfileData.userEducationList.length === 0 ||
+            userEducationAddedClicked
+          "
+        >
+          <form
+            [formGroup]="userEducationFormData"
+            (ngSubmit)="addUserEducation()"
+            id="education_form_id"
+            class="about_yourself_form"
+            style="display: 'block'"
+          >
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Education(College/University)&nbsp;&nbsp;<span
+                class="asterik_color"
+                >*</span
+              >
+            </div>
+            <input
+              type="text"
+              class="user_info_input"
+              name="user_education_college"
+              placeholder="Tell us about your Education"
+              formControlName="collegeName"
+            />
+            <div class="little_spaced_container"></div>
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Graduation Year&nbsp;<span class="asterik_color">*</span>
+            </div>
+            <input
+              type="text"
+              class="user_info_input"
+              name="graduation_yr"
+              placeholder="Enter Graduation Passing Year"
+              formControlName="graduationYear"
+            />
+            <div class="little_spaced_container"></div>
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Degree & Major&nbsp;<span class="asterik_color">*</span>
+            </div>
+            <input
+              type="text"
+              class="user_info_input"
+              name="degree_major"
+              placeholder="Enter degree and major"
+              formControlName="degreeMajor"
+            />
+            <div class="little_spaced_container"></div>
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              GPA&nbsp;<span class="asterik_color">*</span>
+            </div>
+            <input
+              type="text"
+              class="user_info_input"
+              name="gpa"
+              placeholder="Enter your GPA"
+              formControlName="gpaScore"
+            />
+            <div class="little_spaced_container"></div>
+            <div class="button_container">
+              <button
+                class="cancel_button"
+                (click)="cancelUserEducationButtonFunction()"
+              >
+                Cancel
+              </button>
+              <button class="save_work_button">Save</button>
+            </div>
+          </form>
+        </div>
+
+        <button
+          *ngIf="
+            userProfileData.userEducationList.length !== 0 &&
+            !userEducationAddedClicked
+          "
+          class="add_work_exp_button"
+          id="add_education_id"
+          (click)="addMoreUserEducationBoolean()"
+          style="
+            display: 'block';
+            border: none;
+            border-bottom: 1px solid #275df5;
+            color: #275df5;
+            background-color: transparent;
+            font-size: 13px;
+          "
+        >
+          + Add Education
+        </button>
+      </div>
+    </div>
+    <div class="little_spaced_container"></div>
+    <div class="horizontal_line_heading"></div>
+    <div class="about_container">
+      <div class="tell_about_yourself_data">
+        <div
+          class="about_text"
+          style="font-size: 16px; line-height: 20px; font-weight: 600"
+        >
+          Your Skills
+        </div>
+        <div class="about_text_subtitle">
+          This will help companies hone in on your strengths.
+        </div>
+      </div>
+      <div class="about_yourself_form_container extra_adding_container">
+        <form
+          [formGroup]="userProfileFormData"
+          (ngSubmit)="saveYourSelectedSkillsData()"
+          class="about_yourself_form"
+        >
+          <div class="list_selected" id="myMoreSkills">
+            <!-- Selected skills will be displayed here dynamically -->
+            <div
+              class="selectedSkill selectedMoreSkills"
+              data-skill="${skill}"
+              *ngFor="let yourSkill of yourSelectedSkillsList"
+            >
+              <span>{{ yourSkill }}</span>
+              <button
+                class="remove_selected_skill_button remove_selected_more_skill_button"
+                (click)="removeYourSelectedSkills(yourSkill)"
+              >
+                x
+              </button>
+            </div>
+          </div>
+          <select
+            id="myMoreSkillsDropdown"
+            class="styled-select"
+            (change)="addYourSelectedSkills($event)"
+          >
+            <option value="" style="color: #656363; font-size: 13px">
+              Select a Skill
+            </option>
+            <option value="C++">C++</option>
+            <option value="Android Development">Android Development</option>
+            <option value="Flutter">Flutter</option>
+            <option value="React">React</option>
+            <option value="Java">Java</option>
+            <option value="Spring">Spring</option>
+            <option value="Python">Python</option>
+            <option value="Spring-boot">Spring-boot</option>
+          </select>
+          <div class="little_spaced_container"></div>
+          <input
+            type="hidden"
+            name="skills_selected_str_more"
+            value=""
+            class="hidden_more_skils_input"
+          />
+          <div class="button_container">
+            <button class="cancel_button">Cancel</button>
+            <button class="save_work_button">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

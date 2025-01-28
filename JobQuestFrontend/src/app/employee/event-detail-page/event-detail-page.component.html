@@ -1,0 +1,184 @@
+<div class="banner_image_container">
+  <img [src]="'assets/' + eventInfo?.bannerImage" alt="" class="banner_image" />
+</div>
+<div class="color_black_opacity_container"></div>
+<div class="text_info_over_image_container" style="top: 120px">
+  <span class="hackathon_text">Hackathon</span>
+  <div class="title_hackathon_text">{{ eventInfo?.eventName }}</div>
+  <div class="coding_logo_title_container">
+    <img src="assets/coding_logo.gif" alt="" class="coding_logo_image" />
+    <div class="company_name">{{ eventInfo?.organizerName }}</div>
+  </div>
+  <div class="event_tag_info">{{ eventInfo?.tech }}</div>
+  <div class="date_time_enroll_container">
+    <img src="assets/briefcase.png" alt="" class="tags_img_events" />
+    <div class="event_date_time">{{ eventInfo?.dateTime }}</div>
+    <img src="assets/group.png" alt="" class="tags_img_events" />
+    <div class="event_date_time event_enrollment_no">
+      {{ eventInfo?.noOfRegistration }} Enrolled
+    </div>
+  </div>
+</div>
+<ul class="nav nav-pills" style="padding: 2rem 5rem">
+  <li class="nav-item">
+    <a class="nav-link about_text" (click)="scrollTo('scrollspyHeading1')"
+      ><div class="about_text_div is_active">About</div></a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="scrollTo('scrollspyHeading2')"
+      ><div class="about_text_div">Rewards</div></a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="scrollTo('scrollspyHeading3')"
+      ><div class="about_text_div">Organizer</div></a
+    >
+  </li>
+</ul>
+<hr />
+<div
+  data-bs-spy="scroll"
+  data-bs-target="#navbar-example2"
+  data-bs-offset="0"
+  class="scrollspy-example"
+  [tabindex]="0"
+  style="padding: 1.5rem 5rem"
+>
+  <div class="padding_container" id="scrollspyHeading1">
+    <h5 id="scrollspyHeading1 about_heading_text">What is it about?</h5>
+    <div class="side_data_flex_container">
+      <div class="contest_d">
+        <span class="contest_name">Contest Name: </span>
+        {{ eventInfo?.eventName }}<span></span>
+        <div class="about_contest_title">About Contest:</div>
+        <p class="about_contest_text_data" style="width: 100%">
+          {{ eventInfo?.aboutContest }}
+        </p>
+      </div>
+      <div class="share_contest_container">
+        <!-- <c:choose> -->
+        <div *ngIf="isUserLoggedIn">
+          <!-- <c:choose> -->
+          <div *ngIf="alreadyApplied">
+            <a (click)="removeAppliedEvent()">
+              <div class="follow_button">Applied</div>
+            </a>
+          </div>
+          <div *ngIf="!alreadyApplied">
+            <a (click)="applyToEvent()">
+              <div class="follow_button">Apply To Event</div>
+            </a>
+          </div>
+        </div>
+
+        <div *ngIf="!isUserLoggedIn">
+          <a (click)="goToRegisterPage()">
+            <div class="follow_button">Login To Apply</div>
+          </a>
+        </div>
+        <h4 class="share_contest_heading">Share the Contest</h4>
+        <div>
+          <div class="social_anchor_tag_container">
+            <a
+              target="_blank"
+              href="https://www.facebook.com/Naukri"
+              title="Follow Naukri.com on Facebook"
+              data-ga-track="Footer Section|Facebook Link"
+            >
+              <img src="assets/facebook.png" alt="" class="tags_img" />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/Naukri"
+              title="Follow Naukri.com on Facebook"
+              data-ga-track="Footer Section|Facebook Link"
+            >
+              <img src="assets/instagram.png" alt="" class="tags_img" />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/Naukri"
+              title="Follow Naukri.com on Facebook"
+              data-ga-track="Footer Section|Facebook Link"
+            >
+              <img src="assets/twitter.png" alt="" class="tags_img" />
+            </a>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/Naukri"
+              title="Follow Naukri.com on Facebook"
+              data-ga-track="Footer Section|Facebook Link"
+            >
+              <img src="assets/linkedin.png" alt="" class="tags_img" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="padding_container">
+    <h5 id="about_heading_text">Rules to Follow:</h5>
+    <p class="about_contest_text_data">{{ eventInfo?.rulesToFollow }}</p>
+  </div>
+  <div class="padding_container" id="scrollspyHeading2">
+    <div class="reward_body_container">
+      <h5 id="scrollspyHeading2 about_heading_text">
+        Here's what you can win!
+      </h5>
+      <p class="reward_body_text_container">{{ eventInfo?.rewards }}</p>
+    </div>
+  </div>
+  <div class="padding_container" id="scrollspyHeading3">
+    <h5>About the Organizer</h5>
+    <div class="about_organize">
+      <img src="assets/coding_logo.gif" alt="" class="about_image_company" />
+      <div>
+        <div class="company_name">{{ eventInfo?.organizerName }}</div>
+        <img src="assets/star.png" alt="" class="star_image" />
+        <span class="rating"
+          >{{ eventInfo?.rating }} ({{
+            eventInfo?.noOfRegistration
+          }}
+          Reviews)</span
+        >
+      </div>
+    </div>
+    <p class="about_contest_text_data">{{ eventInfo?.aboutQrganizer }}</p>
+  </div>
+  <div class="padding_container" id="scrollspyHeading3">
+    <h5>More Info About Event</h5>
+    <div class="more_info_grid_container">
+      <div class="more_info_wrapper">
+        <div class="key_label_data">Website</div>
+        <div class="colon_data">:</div>
+        <div class="value_label_data">Know More</div>
+      </div>
+      <div class="more_info_wrapper">
+        <div class="key_label_data">Founded</div>
+        <div class="colon_data">:</div>
+        <div class="value_label_data">{{ eventInfo?.founder }}</div>
+      </div>
+      <div class="more_info_wrapper">
+        <div class="key_label_data">Company Size</div>
+        <div class="colon_data">:</div>
+        <div class="value_label_data">{{ eventInfo?.companySize }}</div>
+      </div>
+      <div class="more_info_wrapper">
+        <div class="key_label_data">Company Type</div>
+        <div class="colon_data">:</div>
+        <div class="value_label_data">Private</div>
+      </div>
+      <div class="more_info_wrapper">
+        <div class="key_label_data">Industry</div>
+        <div class="colon_data">:</div>
+        <div class="value_label_data">{{ eventInfo?.industryType }}</div>
+      </div>
+      <div class="more_info_wrapper">
+        <div class="key_label_data">Contact Number</div>
+        <div class="colon_data">:</div>
+        <div class="value_label_data">{{ eventInfo?.contactDetails }}</div>
+      </div>
+    </div>
+  </div>
+</div>

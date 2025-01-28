@@ -1,0 +1,147 @@
+<div class="applied_jobs_heading" *ngIf="appliedJobs.length > 0">Applied Jobs</div>
+<div class="applied_jobs_heading" *ngIf="appliedEvents.length > 0">Applied Events</div>
+
+<div class="main-container">
+  <div
+    *ngIf="currentRoute === 'jobs' && appliedJobs.length <= 0"
+    class="empty_info_image"
+  >
+    <img src="assets/DataImage/empty-waiting2.png" alt="no_data_found_img" />
+    <div class="info_text">No Data Found.</div>
+    <div class="info_sub_text">Explore and apply for the jobs !</div>
+  </div>
+  
+  <a href="/singleJob?jobId={{ job.jobId }}" *ngFor="let job of appliedJobs">
+    <div class="Jobs">
+      <div class="company_heading_section" style="margin-bottom: 0">
+        <div class="company_heading">
+          <div class="job_name">{{ job.jobName }}</div>
+          <div class="company_info">
+            <div class="company_name">
+              {{ job.compId.compName }}
+            </div>
+            <div class="rating_score">
+              <img src="assets/star.png" alt="" />
+              <div class="rating_quant">{{ job.compId.compRating }}</div>
+            </div>
+            <div class="company_review">3524 Review</div>
+          </div>
+        </div>
+        <div class="company_image">
+          <img alt="NA" src="assets/{{ job.compId.compPosterImg }}" />
+        </div>
+      </div>
+      <div class="job_data">
+        <div class="data_sec1">
+          <img src="assets/suitcase.png" alt="NA" class="icon" />
+          <div class="year-exp">
+            {{ job.expReq }} Years Required
+          </div>
+        </div>
+        <div class="data_sec2">
+          <div>
+            <div>|</div>
+          </div>
+          <div class="salary">
+            <div>Rs {{ job.salRangeMin }} L - {{ job.salRangeMax }} L Salary</div>
+          </div>
+          <div>
+            <div>|</div>
+          </div>
+        </div>
+        <div class="data_sec3">
+          <img src="assets/location.png" alt="NA" class="icon" />
+          <div class="location-name">
+            {{ job.location | slice : 0 : 16 }}...
+          </div>
+        </div>
+      </div>
+      <div class="job_desc">
+        <img src="assets/page.png" alt="NA" class="icon_job_desc" />
+        <div class="job_desc_info">{{ job.jobDesc.slice(0, 120) }}...</div>
+      </div>
+      <div class="tags">
+        <!-- Assuming job.keySkills is a comma-separated string -->
+        <ng-container *ngIf="job.keySkills">
+          <ng-container
+            *ngFor="let skill of job.keySkills.split(','); let i = index"
+          >
+            <ng-container *ngIf="i < 4">
+              <div>|</div>
+              <div class="job_tag">{{ skill.trim() }}</div>
+              <div>|</div>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div></a
+  >
+
+  <div
+    *ngIf="currentRoute === 'events' && appliedEvents.length <= 0"
+    class="empty_info_image"
+  >
+    <img src="assets/DataImage/empty-waiting2.png" alt="no_data_found_img" />
+    <div class="info_text">
+      No Data Found Explore and apply for the events !
+    </div>
+  </div>
+  <div *ngFor="let event of appliedEvents">
+    <a (click)="onEventRouting(event.eventId)">
+      <div class="Jobs">
+        <div class="company_heading_section" style="margin-bottom: 0">
+          <div class="company_heading">
+            <div class="job_name">{{ event.eventName }}</div>
+            <div class="company_info">
+              <div class="company_name">
+                {{ event.organizerName }}
+              </div>
+              <div class="rating_score">
+                <img src="assets/star.png" alt="" />
+                <div class="rating_quant">{{ event.rating }}</div>
+              </div>
+              <div class="company_review">3523 Review</div>
+            </div>
+          </div>
+          <div class="company_image_event">
+            <img alt="NA" [src]="'assets/' + event.bannerImage" />
+          </div>
+        </div>
+        <div class="job_data">
+          <div class="data_sec1">
+            <img src="assets/suitcase.png" alt="NA" class="icon" />
+            <div class="year-exp">
+              {{ event.dateTime }}
+            </div>
+          </div>
+
+          <div class="data_sec2">
+            <div>
+              <div>|</div>
+            </div>
+            <div class="salary">
+              <div>{{ event.companySize }}</div>
+            </div>
+            <div>
+              <div>|</div>
+            </div>
+          </div>
+
+          <div class="data_sec3">
+            <img src="assets/location.png" alt="NA" class="icon" />
+            <div class="location-name">
+              {{ event.noOfRegistration }} Registrations
+            </div>
+          </div>
+        </div>
+
+        <div class="job_desc">
+          <img src="assets/page.png" alt="NA" class="icon_job_desc" />
+          <div class="job_desc_info">
+            {{ event.aboutContest.slice(0, 120) }}...
+          </div>
+        </div>
+      </div></a
+    >
+  </div>
+</div>

@@ -1,0 +1,432 @@
+<app-employer-header></app-employer-header>
+<div class="containerr">
+  <h1 class="title_heading_tag">Edit Your Company Profile</h1>
+
+  <div class="profile_body_container">
+    <div class="about_container">
+      <div class="tell_about_yourself_data">
+        <div
+          class="about_text"
+          style="font-size: 16px; line-height: 20px; font-weight: 600"
+        >
+          About
+        </div>
+        <div class="about_text_subtitle">
+          Tell us about your company to know what you are
+        </div>
+      </div>
+      <div class="about_yourself_form_container">
+        <form
+          [formGroup]="companyProfileFormData"
+          (ngSubmit)="addBasicInfoOfCompany()"
+          class="about_yourself_form"
+        >
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Company Name&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="compName"
+            placeholder="Enter your Company Name here"
+            formControlName="compName"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Company Email&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="compEmail"
+            placeholder="Enter your company email here"
+            [disabled]="isDisabled"
+            readonly="readonly"
+            formControlName="compEmail"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Company Contact Number&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="number"
+            class="user_info_input"
+            name="compContactNo"
+            placeholder="Enter company contact number here"
+            formControlName="compContactNo"
+          />
+          <div class="little_spaced_container"></div>
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Company Contact Name&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="compContactNo"
+            placeholder="Enter your company contact person Name"
+            formControlName="compContactName"
+          />
+          <div class="little_spaced_container"></div>
+
+          <div
+            for=""
+            class="user_info_label"
+            style="font-size: 14px; line-height: 24px; font-weight: 600"
+          >
+            Description of Company&nbsp;<span class="asterik_color">*</span>
+          </div>
+          <textarea
+            name="compDesc"
+            id=""
+            cols="70"
+            rows="7"
+            class="text-md"
+            placeholder="Enter your Company Description Here"
+            formControlName="compDesc"
+          ></textarea>
+          <div class="button_container">
+            <button class="cancel_button">Cancel</button>
+            <button class="save_work_button">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="little_spaced_container"></div>
+    <div class="horizontal_line_heading"></div>
+    <div class="about_container">
+      <div class="tell_about_yourself_data">
+        <div
+          class="about_text"
+          style="font-size: 16px; line-height: 20px; font-weight: 600"
+        >
+          Detail Company Info
+        </div>
+        <div class="about_text_subtitle">
+          Enter more info about your company for better views
+        </div>
+      </div>
+      <div class="about_yourself_form_container">
+        <form
+          [formGroup]="companyProfileFormData"
+          (ngSubmit)="addMoreCompanyInfo()"
+          class="about_yourself_form"
+        >
+          <div class="logo_name_container">
+            <img src="assets/globe-grid.png" alt="" class="tags_img small" />
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Website Url of Company&nbsp;<span class="asterik_color">*</span>
+            </div>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="compWebsiteUrl"
+            placeholder="Enter your website url"
+            formControlName="compWebsiteUrl"
+          />
+          <div class="little_spaced_container"></div>
+          <div class="logo_name_container">
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Company Headquarter Located At&nbsp;<span class="asterik_color">*</span>
+            </div>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="compHeadquaters"
+            placeholder="Enter where your Headquarters is located"
+            formControlName="compHeadquaters"
+          />
+          <div class="little_spaced_container"></div>
+          <div class="logo_name_container">
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Founded At&nbsp;<span class="asterik_color">*</span>
+            </div>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="foundedAt"
+            placeholder="Enter when you company was founded"
+            formControlName="foundedAt"
+          />
+          <div class="little_spaced_container"></div>
+          <div class="logo_name_container">
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Company Type&nbsp;<span class="asterik_color">*</span>
+            </div>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="compType"
+            placeholder="What type is your company"
+            formControlName="compType"
+          />
+          <div class="little_spaced_container"></div>
+          <div class="logo_name_container">
+            <div
+              for=""
+              class="user_info_label"
+              style="font-size: 14px; line-height: 24px; font-weight: 600"
+            >
+              Tag Line Of Company&nbsp;<span class="asterik_color">*</span>
+            </div>
+          </div>
+          <input
+            type="text"
+            class="user_info_input"
+            name="compTagLine"
+            placeholder="Enter your Company Tagline"
+            formControlName="compTagLine"
+          />
+          <div class="little_spaced_container"></div>
+          <div class="button_container">
+            <button class="cancel_button" type="reset">Cancel</button>
+            <button class="save_work_button">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="little_spaced_container"></div>
+    <div class="horizontal_line_heading"></div>
+    <div class="about_container">
+      <div class="tell_about_yourself_data">
+        <div
+          class="about_text"
+          style="font-size: 16px; line-height: 20px; font-weight: 600"
+        >
+          Additional Company Info
+        </div>
+        <div class="about_text_subtitle">
+          Enter images and tags of your company to stand out
+        </div>
+      </div>
+      <div class="about_yourself_form_container">
+        <form
+          [formGroup]="companyProfileFormData"
+          (ngSubmit)="addImageTagsCompanyInfo()"
+          class="about_yourself_form"
+        >
+          <div class="tags_input_display_div">
+            <div class="margin_div_tags">
+              <div class="logo_name_container">
+                <div
+                  for=""
+                  class="user_info_label"
+                  style="font-size: 14px; line-height: 24px; font-weight: 600"
+                >
+                  Tag of Company(Tag 1)&nbsp;<span class="asterik_color">*</span>
+                </div>
+              </div>
+              <div style="width: 100%">
+                <input
+                  type="text"
+                  class="user_info_input"
+                  name="tag1"
+                  placeholder="Enter Tag 1"
+                  formControlName="tag1"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div class="logo_name_container">
+                <div
+                  for=""
+                  class="user_info_label"
+                  style="font-size: 14px; line-height: 24px; font-weight: 600"
+                >
+                  Tag of Company(Tag 2)&nbsp;<span class="asterik_color">*</span>
+                </div>
+              </div>
+              <div style="width: 100%">
+                <input
+                  type="text"
+                  class="user_info_input"
+                  name="tag2"
+                  placeholder="Enter Tag 2"
+                  formControlName="tag2"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="little_spaced_container"></div>
+          <div class="tags_input_display_div">
+            <div class="margin_div_tags">
+              <div class="logo_name_container">
+                <div
+                  for=""
+                  class="user_info_label"
+                  style="font-size: 14px; line-height: 24px; font-weight: 600"
+                >
+                  Tag of Company(Tag 3)&nbsp;<span class="asterik_color">*</span>
+                </div>
+              </div>
+              <div style="width: 100%">
+                <input
+                  type="text"
+                  class="user_info_input"
+                  name="tag3"
+                  placeholder="Enter Tag 3"
+                  formControlName="tag3"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div class="logo_name_container">
+                <div
+                  for=""
+                  class="user_info_label"
+                  style="font-size: 14px; line-height: 24px; font-weight: 600"
+                >
+                  Tag of Company(Tag 4)&nbsp;<span class="asterik_color">*</span>
+                </div>
+              </div>
+              <div style="width: 100%">
+                <input
+                  type="text"
+                  class="user_info_input"
+                  name="tag4"
+                  placeholder="Enter Tag 4"
+                  formControlName="tag4"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="little_spaced_container"></div>
+          <div class="tags_input_display_div">
+            <div class="margin_div_tags">
+              <div class="logo_name_container">
+                <div
+                  for=""
+                  class="user_info_label"
+                  style="font-size: 14px; line-height: 24px; font-weight: 600"
+                >
+                  Banner Image&nbsp;<span class="asterik_color">*</span>
+                </div>
+              </div>
+              <div
+                (click)="bannerInputFile.click()"
+                class="image_selector_div"
+                style="width: 100px; height: 120px"
+              >
+                <img
+                  src="assets/add-image.png"
+                  alt=""
+                  style="width: 100px; height: 120px"
+                />
+              </div>
+              <div
+                *ngIf="bannerNameSelected !== ''"
+                class="selected_file_display"
+              >
+                <span class="selected_file_label">
+                  <span class="file_name_input_selected">{{
+                    bannerNameSelected
+                  }}</span></span
+                >
+                <span (click)="clearBannerFile()" style="cursor: pointer">
+                  &#10006;
+                </span>
+              </div>
+              <input
+                #bannerInputFile
+                style="display: none"
+                accept=".jpeg, .jpg, .png"
+                type="file"
+                (change)="onBannerImageSelected($event)"
+              />
+            </div>
+            <div>
+              <div class="logo_name_container">
+                <div
+                  for=""
+                  class="user_info_label"
+                  style="font-size: 14px; line-height: 24px; font-weight: 600"
+                >
+                  Poster Image&nbsp;<span class="asterik_color">*</span>
+                </div>
+              </div>
+              <div
+                (click)="posterInputFile.click()"
+                class="image_selector_div"
+                style="width: 100px; height: 120px"
+              >
+                <img
+                  src="assets/add-image.png"
+                  alt=""
+                  style="width: 100px; height: 120px"
+                />
+              </div>
+              <div
+                *ngIf="posterNameSelected !== ''"
+                class="selected_file_display"
+              >
+                <span class="selected_file_label">
+                  <span class="file_name_input_selected">{{
+                    posterNameSelected
+                  }}</span></span
+                >
+                <span (click)="clearPosterFile()" style="cursor: pointer">
+                  &#10006;
+                </span>
+              </div>
+              <input
+                #posterInputFile
+                type="file"
+                accept=".jpeg, .jpg, .png"
+                style="display: none"
+                (change)="onPosterImageSelected($event)"
+              />
+            </div>
+          </div>
+          <div class="little_spaced_container"></div>
+          <div class="button_container">
+            <button class="cancel_button" type="reset">Cancel</button>
+            <button class="save_work_button">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="back_home_btn_div">
+    <button (click)="onGoBackToHomeClicked()" class="back_to_home_page_btn">
+      Go to Home Page <img src="assets/back.png" alt="" class="tags_img" />
+    </button>
+  </div>
+  <div style="margin-bottom: 30px"></div>
+</div>

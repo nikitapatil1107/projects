@@ -1,0 +1,84 @@
+<app-employer-header></app-employer-header>
+<div class="display_flex">
+  <div
+    *ngIf="userAppliedJob.length <= 0 || !isAllListActive"
+    class="empty_info_image"
+  >
+    <img src="assets/DataImage/empty-waiting2.png" alt="no_data_found_img" />
+    <div class="info_text">No Data Found.</div>
+    <div class="info_sub_text">
+      View Applications for your organization here!
+    </div>
+  </div>
+  <div *ngIf="userAppliedJob.length > 0 && isAllListActive">
+    <table>
+      <caption></caption>
+      <thead>
+        <tr>
+          <th>User Name</th>
+          <th>User Email</th>
+          <th>Contact No</th>
+          <th>Job Name</th>
+          <th>View Application</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let user of userAppliedJob; let i = index">
+        <tr *ngIf="!user.jobDataActive">
+          <td>{{ user.userName }}</td>
+          <td>{{ user.userEmail }}</td>
+          <td>{{ user.userContactNo }}</td>
+          <td>{{ user.jobName }}</td>
+          <td>
+            <a
+              style="margin-left: 20%"
+              (click)="onViewProfileRouting(user.id!)"
+              class="view-application"
+              >View</a
+            >
+          </td>
+          <td>
+            <a
+              (click)="onAcceptClicked(user.userEmail, user.jobName)"
+              title="Accept Application"
+            >
+              <img
+                src="assets/check.png"
+                alt="Download"
+                style="width: 35px; height: 35px; margin: 0 8px"
+                class="image_action"
+              />
+            </a>
+            <a
+              (click)="
+                onRejectClicked(
+                  user.userEmail,
+                  user.jobName,
+                  user.id!,
+                  user.jobId,
+                  i
+                )
+              "
+              title="Reject Application"
+            >
+              <img
+                src="assets/rejected.png"
+                alt="Accept"
+                style="width: 35px; height: 35px; margin: 0 8px"
+                class="image_action"
+              />
+            </a>
+            <a (click)="onGetPdf(user.id!)" title="Download Resume">
+              <img
+                src="assets/download.png"
+                alt="Reject"
+                style="width: 35px; height: 35px; margin: 0 8px"
+                class="image_action"
+              />
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
